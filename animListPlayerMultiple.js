@@ -13,7 +13,6 @@ let modelList=[
         'viewcontainer':document.getElementById("characterview2"),
         'playflag':"idle"
     },
-    
     {
         'src':'https://sinjaesung.github.io/3DASSETtest/character3/character3DanceRest3.glb',
         'isloaded':false,
