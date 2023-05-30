@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="domino.css">
+    <script src="https://sinjaesung.github.io/webPageTest/three.js-master/examples/jsm/libs/ammo.wasm.js"></script>
+    <script type="importmap">
+        {
+            "imports":{
+                "three" : "https://sinjaesung.github.io/webPageTest/three.js-master/build/three.module.js",
+                "three/examples/jsm/controls/OrbitControls":"https://sinjaesung.github.io/webPageTest/three.js-master/examples/jsm/controls/OrbitControls.js",
+                "three/examples/jsm/geometries/TextGeometry":"https://sinjaesung.github.io/webPageTest/three.js-master/examples/jsm/geometries/TextGeometry.js",
+                "three/examples/jsm/loaders/FontLoader":"https://sinjaesung.github.io/webPageTest/three.js-master/examples/jsm/loaders/FontLoader.js",
+                "three/examples/jsm/loaders/TTFLoader":"https://sinjaesung.github.io/webPageTest/three.js-master/examples/jsm/loaders/TTFLoader.js"
+            }
+        }
+    </script>
+    <script type="module" src="domino.js" defer></script>
+</head>
+<body>
+    <div id="webgl-container"></div>
+    <div class="description">
+        <p>1.'CTRL'키를 누른채 화면의 아무곳이나 클릭하면 공이 발사됩니다.</p>
+        <p>2.마우스키 or 터치를 눌러서 화면을 기본 조작가능합니다.</p>
+    </div>
+</body>
+</html> 

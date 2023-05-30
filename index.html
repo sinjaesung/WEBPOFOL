@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en"OriginId='HTMLROOT' targetindex="javascript_scrollContaineronly">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,minimum-scale=1">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://fonts.googleapis.com/icons" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!--<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>-->
+</head>
+<body class="position_relative_normal">
+<audio src="img/mainMusic.mp3" autoplay loop></audio>
+<div class="PageGuide">
+    <p>모든 모델 상세보기형 페이지(링크클릭시)에서의 3D MODEL을 보실때 마우스드래그드롭,Shift키 조합등으로 3d공간상의 시점변환,transform,카메라방향전환등 가능합니다. 마우스휠로 확대/축소. 이점 이용시 참고바랍니다.</p>
+</div> 
+<div id="pageLoader">
+    <img src="img/Circle-Loading.svg"/>
+</div> 
+
+<div id="pageLoadersMainWrap">
+    <img src="img/Circle-Loading.svg"/>
+</div> 
+<!--fontfamily_Montserrat_Bold-->
+<!--<div id="javascript_scrollContainer" class="main_localScrollwrapper"targetindex="javascript_scrollContaineronly">-->
+<div id='javascript_contentContainer'>
+    <header class='javascript_Css_define position_fixed'javascript_Css_define="
+    0~640|640*1100$width:590response;left:0;right:0;margin:0 auto;top:0;z-index:989^
+    641~960|960*1100$width:824response;left:0;right:0;margin:0 auto;top:0;z-index:989^
+    961~1400|1400*1100$width:1262response;left:0;right:0;margin:0 auto;top:0;z-index:989^
+    1401~1920|1920*1080$width:1642response;left:0;right:0;margin:0 auto;top:0;z-index:989^
+    1921~9999|1920*1080$width:1642response;left:0;right:0;margin:0 auto;top:0;z-index:989">
+        <div class="inner javascript_Css_define position_relative_normal"javascript_Css_define="
+        0~640|640*1100$margin-top:52responmin;padding-bottom:60responmin;display:flex;flex-flow:row nowrap;justify-content:space-between^
+        641~960|960*1100$margin-top:42responmin;padding-bottom:60responmin;display:flex;flex-flow:row nowrap;justify-content:space-between^
+        961~1400|1400*1100$margin-top:38responmin;padding-bottom:60responmin;display:flex;flex-flow:row nowrap;justify-content:space-between^
+        1401~1920|1920*1080$margin-top:38responmin;padding-bottom:80responmin;display:flex;flex-flow:row nowrap;justify-content:space-between^
+        1921~9999|1920*1080$margin-top:38responmin;padding-bottom:80responmin;display:flex;flex-flow:row nowrap;justify-content:space-between">
+            <span class="headerlogo javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$width:70px;height:28px;display:block^
+            641~960|960*1100$width:90px;height:36px;display:block^
+            961~1400|1400*1100$width:150px;height:60px;display:block^
+            1401~1920|1920*1080$width:150px;height:60px;display:block^
+            1921~9999|1920*1080$width:150responmin;height:60responmin;display:block">
+                <img src="img/sinjaLogo.svg"/>
+            </span>
+            <div class="navimenubar javascript_Css_define cursorpointer javascript_StyleEffectTrigger2 javascript_StyleEffectTrigger2_naviOpen"javascript_Css_define="
+            0~9999|960*1100$position:absolute;right:0;top:0">
+                <span class="bar javascript_Css_define" javascript_Css_define="
+                0~1920|960*1100$width:24px;height:4px;margin-bottom:4responmax;background-color:#707070;display:block^
+                1921~9999|1920*1080$width:24responmin;height:4responmin;margin-bottom:4responmax;background-color:#707070;display:block">
+                </span>
+                <span class="bar javascript_Css_define" javascript_Css_define="
+                0~1920|960*1100$width:24px;height:4px;margin-bottom:4responmax;background-color:#707070;display:block^
+                1921~9999|1920*1080$width:24responmin;height:4responmin;margin-bottom:4responmax;background-color:#707070;display:block">
+                </span>
+                <span class="bar javascript_Css_define" javascript_Css_define="
+                0~1920|960*1100$width:24px;height:4px;background-color:#707070;display:block^
+                1921~9999|1920*1080$width:24responmin;height:4responmin;background-color:#707070;display:block">
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <div class="naviBg javascript_Css_define position_fixed"targetindex='navBg'javascript_Css_define="
+    0~9999|1920*1080$display:none;left:0;top:0;width:100%;height:100%;background-color:rgba(255,255,255,0.5);z-index:500"style='display:none'></div>
+    <nav class="javascript_Css_define position_fixed" javascript_Css_define="
+    0~640|640*1100$width:90%;height:100vh;right:0;top:0;background-color:rgba(255,255,255,0.94);padding-top:144responmax;right:0;top:0;z-index:998;right:-200%;display:none^
+    641~1920|1920*1080$width:420px;height:100vh;right:0;top:0;background-color:rgba(255,255,255,0.94);padding-top:224responmin;right:0;top:0;z-index:998;right:-200%;display:none^
+    1921~9999|1920*1080$width:420responmin;height:100vh;right:0;top:0;background-color:rgba(255,255,255,0.94);padding-top:224responmin;right:0;top:0;z-index:998;right:-200%;display:none"targetindex='naviOpenTarget,naviCloseTarget'>
+        <a href='index.html'> <span class="navilogo javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$width:70px;height:28px;display:block;margin-bottom:2rem;margin-left:3%^
+            641~960|960*1100$width:90px;height:36px;display:block;margin-bottom:2rem;margin-left:3%^
+            961~1400|1400*1100$width:150px;height:60px;display:block;margin-bottom:2rem;margin-left:3%^
+            1401~1920|1920*1080$width:150px;height:60px;display:block;margin-bottom:2rem;margin-left:3%^
+            1921~9999|1920*1080$width:150responmin;height:60responmin;display:block;margin-bottom:2rem;margin-left:3%">
+                <img src="img/sinjaLogo.svg"/>
+            </span></a>
+        <img src="img/closeblack.png"class="display_block javascript_Css_define cursorpointer javascript_StyleEffectTrigger2 javascript_StyleEffectTrigger2_naviClose"javascript_Css_define="
+        0~640|640*1100$width:22px;height:22px;right:62responmax;top:34responmax;position:absolute^
+        641~1920|960*1100$width:22px;height:22px;right:62px;top:34px;position:absolute^
+        1921~9999|1920*1080$width:22responmin;height:22responmin;right:62responmin;top:34responmin;position:absolute"/>
+
+        <ul class="menuList ">
+            <li class="CSSHOVER_MENU_style1 Montserrat_Medium menuitem javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:144response^
+            641~1920|960*1100$display:flex;align-items:center;font-size:24px;color:#606060;padding-bottom:24responmax;padding-left:94px^
+            1921~9999|1920*1080$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:94responmin">
+                <span class="activeball javascript_Css_define"javascript_Css_define="
+                0~640|1400*1100$display:block;width:18responmax;height:18responmax;margin-right:6responmin;background-color:#606060;border-radius:50%^
+                641~1920|1920*1080$display:block;width:18px;height:18px;margin-right:8responmin;background-color:#606060;border-radius:50%^
+                1921~9999|1920*1080$display:block;width:18responmin;height:18responmin;margin-right:8responmin;background-color:#606060;border-radius:50%">
+                </span>
+                <span class="txt">
+                    <a href='mindSet.html'>MINDSET</a>
+                </span>
+            </li>
+            <li class="CSSHOVER_MENU_style1 Montserrat_Medium menuitem javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:144response^
+            641~1920|960*1100$display:flex;align-items:center;font-size:24px;color:#606060;padding-bottom:24responmax;padding-left:94px^
+            1921~9999|1920*1080$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:94responmin">
+                <span class="activeball javascript_Css_define"javascript_Css_define="
+                0~640|1400*1100$display:block;width:18responmax;height:18responmax;margin-right:6responmin;background-color:#606060;border-radius:50%^
+                641~1920|1920*1080$display:block;width:18px;height:18px;margin-right:8responmin;background-color:#606060;border-radius:50%^
+                1921~9999|1920*1080$display:block;width:18responmin;height:18responmin;margin-right:8responmin;background-color:#606060;border-radius:50%">
+                </span>
+                <span class="txt">
+                    <a href='EvilHumans.html'>EVILHUMANS</a>
+                </span>
+            </li>
+            <li class="CSSHOVER_MENU_style1 Montserrat_Medium menuitem javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:144response^
+            641~1920|960*1100$display:flex;align-items:center;font-size:24px;color:#606060;padding-bottom:24responmax;padding-left:94px^
+            1921~9999|1920*1080$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:94responmin">
+                <span class="activeball javascript_Css_define"javascript_Css_define="
+                0~640|1400*1100$display:block;width:18responmax;height:18responmax;margin-right:6responmin;background-color:#606060;border-radius:50%^
+                641~1920|1920*1080$display:block;width:18px;height:18px;margin-right:8responmin;background-color:#606060;border-radius:50%^
+                1921~9999|1920*1080$display:block;width:18responmin;height:18responmin;margin-right:8responmin;background-color:#606060;border-radius:50%">
+                </span>
+                <span class="txt">
+                    <a href='gameGuides.html'>GALLERY&gameGuides</a>
+                </span>
+            </li>
+        </ul>
+    </nav>
+   
+   <section class="mainVisual section0 position_relative_normal javascript_scrollTriggerWideArea_general  overflow_hidden"id='javascript_scrollTriggerWideArea_general_group1'easyid='1' style='height:5000px'
+    >
+        <div targetindex='javascript_videowrapper'class="videoWrappervisual javascript_Css_define "style='position:fixed'javascript_Css_define="
+        0~960|960*1200$width:100%;height:100vh;position:absolute;left:0;top:0;overflow:hidden;background-color:#000;perspective:4000px;perspective-origin:50% 50%^
+        961~9999|1920*1080$width:100%;height:100vh;position:absolute;left:0;top:0;overflow:hidden;background-color:#000;perspective:4000px;perspective-origin:50% 50%">
+        
+            <p id='generalScrollTarget1-1'class="fontfamily_Montserrat_Bold display_block position_absolute javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$font-size:31responmax;color:rgba(255,115,96,1);font-weight:900;left:50response;z-index:8^
+            641~1024|1024*1100$font-size:40responmax;color:rgba(255,115,96,1);font-weight:900;left:80response;z-index:8^
+            1025~1920|1920*1080$font-size:76response;color:rgba(255,115,96,1);font-weight:900;left:125response;z-index:8^
+            1921~9999|1920*1080$font-size:76response;color:rgba(255,115,96,1);font-weight:900;left:125response;z-index:8">
+            MINDSET(Player)과
+            </p>
+            <p id='generalScrollTarget1-2'class="fontfamily_Montserrat_Bold display_block position_absolute javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$font-size:31responmax;color:rgba(255,115,96,1);font-weight:900;left:50response;z-index:8^
+            641~1024|1024*1100$font-size:40responmax;color:rgba(255,115,96,1);font-weight:900;left:80response;z-index:8^
+            1025~1920|1920*1080$font-size:76response;color:rgba(255,115,96,1);font-weight:900;left:125response;z-index:8^
+            1921~9999|1920*1080$font-size:76response;color:rgba(255,115,96,1);font-weight:900;left:125response;z-index:8">
+            EvilHumans(enemy) 
+            </p>
+
+            <p id='generalScrollTarget1-3'class="fontfamily_Montserrat_Bold display_block position_absolute javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$font-size:23responmax;color:rgba(255,115,96,1);font-weight:900;left:50response;z-index:8^
+            641~1024|1024*1100$font-size:26responmax;color:rgba(255,115,96,1);font-weight:900;left:80response;z-index:8^
+            1025~1920|1920*1080$font-size:64response;color:rgba(255,115,96,1);font-weight:900;left:125response;z-index:8^
+            1921~9999|1920*1080$font-size:64response;color:rgba(255,115,96,1);font-weight:900;left:125response;z-index:8">
+            간에 펼쳐지는 2040년 
+            미래전쟁 아케이드 게임.
+            </p>
+            <p id='generalScrollTarget1-4'class="fontfamily_Montserrat_Bold display_block position_absolute javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$font-size:25responmax;color:rgba(255,115,96,1);font-weight:900;left:20response;z-index:8^
+            641~1024|1024*1100$font-size:26responmax;color:rgba(255,115,96,1);font-weight:900;left:80response;z-index:8^
+            1025~1920|1920*1080$font-size:64response;color:rgba(255,115,96,1);font-weight:900;left:125response;z-index:8^
+            1921~9999|1920*1080$font-size:64response;color:rgba(255,115,96,1);font-weight:900;left:125response;z-index:8">
+            STORYLINE
+            </p>
+
+            <div id="generalScrollTarget1-5" class="display_block position_absolute flex_horizontal_flexStart javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$font-size:13px;font-weight:500;left:0;z-index:8;color:white;width:100%;padding-left:20response;padding-right:20response^
+            641~1024|1024*1100$font-size:17responmax;font-weight:500;left:0;padding-right:80response;z-index:8;color:white;width:100%;padding-left:80response^
+            1025~1920|1920*1080$font-size:19px;font-weight:500;left:120response;z-index:8;color:white;width:720px^
+            1921~9999|1920*1080$font-size:19responmin;font-weight:500;left:120response;z-index:8;color:white;width:720response">
+                <strong>MINDSET</strong> 그룹은 2036년경 한 정신능력이 비상한
+                SJS라는 괴짜 과학자가 자신의 정신에너지와 과학력을 바탕으로 비밀리에 몇몇의 동류과학자들과 만든 그룹으로, 점점 AI와 핵전쟁,무기남용, 정치&패권장악,기후&식량문제 등으로 
+                망해가는 미래지구의 암울한 환경상에서 패권장악을 하여 
+                인류를 비정상적인 방식으로 통치하려는
+                지능적 조직(aimechaTro,EviHumans) 들로부터의 환멸을 
+                느낀 동류과학자 집단이 SJS를 필두로 인조인간 프로젝트를 진행했고,
+                발달된 생명,정신&뇌과학기술을 바탕으로 하여 설립자 SJS의 정신에너지를
+                이용하여 이 인물의 각종 감정
+                <p style="width:100%"> 1.분노,열정,야망</p>
+                <p style="width:100%">2.냉정,온화,균형</p>
+                <p style="width:100%">3.광기,쾌락,비편견,용기</p>
+                <p style="width:100%">4.근면,성실,인내,각오,꾸준함</p>
+                <p style="width:100%">5.결의,용맹</p>
+                <p style="width:100%">6.용기,냉정</p>
+                <p style="width:100%">7.사랑,평화,긍정</p>
+                등 인간이 보편적으로 느끼는 이러한 높은주파수대의(긍정편향,positive direction)
+                정신패턴을 각각 형상화한 7가지의 인조인간 타입을 제작하였고, 3년간의 연구끝에
+                7명의 인조인간이 탄생하게 되었고, 이들은 비정상적인
+                신체능력과,정신능력을 가지게 되었다. 
+                이들은 로봇이 아니며, 자유의지와 자아를 가지는 ... 
+                SJS와의 실시간 오버마인드 신경정신망을 통한 의식을 공유하는
+                집단의식 초인 생명체인것이다. 개별적으로 특화된 감정패턴이 있으며
+                인간과 유사한 자의식을 가진다.
+                <br/><br/>
+                또한 실험과정중 
+                여러가지의 정신에너지가 의도치않게 섞여 정체를 알수없는 감정
+                상태가 결합된 인조인간도 의도치않게 발생되어 총 8명의
+                인조인간 자의식생명체들이 탄생하게 된다.   
+                <br/><br/><br/>
+                
+                이 시점에 세계 곧곧의 연합혁명군들의
+                기술력은 2020년경수준의 기술력 수준밖에 안되었고, 이들은
+                마인드셋이란 집단의 존재를 알게 되어 마인드셋의
+                관련자들과의 협력관계를 유지하게되고, 혁명연합군중
+                특출난 정신력과 신체능력을 가진 스미스란 인물을 대표로 마인드셋
+                멤버로 합류시키게된다.  마인드셋과 혁명연합군은 손을 잡고 이시점부터 evilhumans에 대항하여 세계의 남은 인류들의 각종 여러 정신적 신체적 문제등을 케어해주고, 순수한 선의에 의한 싸움에
+                동조시키는 활동을 하고있다. 
+
+                <br/><br/><br/>
+
+                <strong>EVILHUMANS</strong> 그룹은 2023년경부터 지구환경변화와 3차세계대전과 관련된 국가간의 패권문제,인구문제  등의 각종 지구촌 문제를 눈여겨 보고있던 일루미나티 파벌의 세계 곳곳의 비밀결사조직들이 비밀리에 모여 이러한 문제에 대해 논의하다가 나오게된 지구촌 RESET프로젝트의 결과물로써 나온 그룹이며, 지구를 다시 산업문명이전의 깨끗하고 쾌적한 상태로 돌려놓자는 취지로 다소 왜곡된 논리로 서서히 자신들과 동조할  
+                세계 각지의 비슷한 사상의 각종 인재,천재들을 비밀리에 소집하여 GOOGLE,마이크로소프트 등의 세계 굴지의 각종 고문들까지 검은돈을 이용하여 포섭하여 연구기술 구매 => ai,기계,무기 첨단 기술들을 연구하면서 자신들만의 새로운 정부를 탄생시켰고, 
+                
+                <br/><br/>
+                이 그룹은 크게 기계,ai 통제 (1.aiMecha그룹) 
+                무기,첨단기술,인적자원관리,정치행정관리 등의
+                2.EvilHuman 그룹으로 나뉘게 되었고
+                사실상 둘은 한몸과 같으며 2030년경 그 입지가 매우 커져
+                세계 3차대전을 일으키게되고 패권국인 러시아,미국,중국,유럽연합 
+                등 각종 나라와의 전쟁에서 손쉽게 이기는 성과를 보이게되고 남은 인류를 잔인하고,비윤리적인 방식으로 통제하였다.
+                <br/><br/>
+                각종 머리가 좋은 인재들은 영입하여 자신들의 기술력을 끌어올리게끔 강제적으로 연구소로 보내었고, 그렇지 않은 존재들은 생체실험&노동력 착취등으로 이용하고 , 끝까지 저항하는 존재들은 자신들의 AREA에서 추방하거나 쫓아다니며 괴롭히는 행태를 보였다.
+                evilhuman에게 굴복한 자들은 그들의 부하로써 연구원,시설관리인,행정인사관리,ai연구통제, 생체실험사이보그체,기계관리,중하급 노동력(로봇과 동류) 취급당하여 생활하였고,
+                <br/><br/>
+                끝까지 도망쳐서 남은 세계 곧곧의 반란인자들이 모여 혁명연합군이 2031년경 탄생하게 되었으나 evilHumans 정부의 힘에 비해선 너무나 약하였다. 
+                <br/><br/>
+                사실상 2030년부터 현시점 2040년경까지 인류를 통치하고 있는 존재들이며, 이들로 인해 2025년경 당시 80억에 달하던 인구는 이들이 통치와 잔악한 식량통제,정치통제,무기남용 등으로 30억으로 급감하고,
+                <br/><br/>
+                이들중 대부분의 50%이상은 evilHumans에게 합병흡수되었고, 나머지 20%가량은 혁명연합군 및 소수의 반란인자과학자단체,
+                나머지 30%는 혁명연합군과 동맹관계의 중립국가연합이 있다.
+            </div>
+           
+
+            <div class="videoWrap position_absolute javascript_Css_define overflow_hidden"javascript_Css_define="
+            0~640|640*1100$width:100%;height:100vh;left:0^
+            641~1024|1024*1100$width:100%;height:100vh;left:0^
+            1025~1920|1920*1080$width:100%;height:100vh;left:0^
+            1921~9999|1920*1080$width:100%;height:100vh;left:0"id='generalScrollTargetVideo'>
+                
+                <video autoplay muted loop playsinline preload="metadata"
+                class="display_block  javascript_Css_define"javascript_Css_define="
+                0~960|960*1100$height:100%;background-color:#000;left:50%;top:50%;transform:translateX=-50%@translateY=-50%;position:absolute^
+                961~1920|1920*1080$height:1080px;background-color:#000;left:50%;top:50%;transform:translateX=-50%@translateY=-50%;position:absolute^
+                1921~9999|1920*1080$height:1080responmin;background-color:#000;left:50%;top:50%;transform:translateX=-50%@translateY=-50%;position:absolute">
+                    <source src="mainvideoShort.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="transformAnimateTarget3_" class="javascript_Css_define position_absolute javascript_inlinestyle_responsive_elements"javascript_Css_define="
+            0~640|640*1100$width:100%;height:100%;bottom:0%;right:-300%;background-color:#8020ef;transform:skewY=30deg@translateZ=-5800responmax@rotateZ=360deg;opacity:0^
+            641~1024|1024*1080$width:100%;height:100%;bottom:0%;right:-300%;background-color:#8020ef;transform:skewY=30deg@translateZ=-6000responmax@rotateZ=360deg;opacity:0^
+            1025~9999|1920*1080$width:100%;height:100%;bottom:0%;right:-300%;background-color:#8020ef;transform:skewY=30deg@translateZ=-7000responmin@rotateZ=360deg;opacity:0
+            "response_properties="transform">
+            </div>
+            <div id="generalScrollTargetVideoFadeout" class="javascript_Css_define"javascript_Css_define="
+            0~9999|1920*1080$width:100%;height:100%;left:0;top:0;position:absolute"></div>
+        </div>  
+    </section>
+
+   
+    <section class="section2 mindSetGroup javascript_Css_define position_relative_normal   overflow_hidden "
+    >
+        <div class="contentWrap position_relative_normal javascript_Css_define"style='z-index:9'javascript_Css_define="
+        0~640|640*1100$padding-bottom:290responmax;opacity:0.96^
+        641~1024|1024*1100$padding-bottom:203responmax;opacity:0.96^
+        1025~1920|1920*1080$padding-bottom:310responmin;opacity:0.96^
+        1921~9999|1920*1080$padding-bottom:310responmin;opacity:0.96">
+            <div class="sectionMessage">
+                <h2 class="sectionTit javascript_Css_define fontfamily_Montserrat_Bold"javascript_Css_define="
+                0~640|640*1100$padding-left:22response;padding-top:26responh;font-size:35responmin;padding-bottom:30responh;color:#202020^
+                641~1024|1024*1100$padding-left:53response;padding-top:95responh;font-size:60responmax;padding-bottom:30responh;color:#202020^
+                1025~1920|1920*1080$padding-left:116response;padding-top:201responh;font-size:103responmin;padding-bottom:57responh;color:#202020^
+                1921~9999|1920*1080$padding-left:116response;padding-top:201responh;font-size:103responmin;padding-bottom:57responmin;color:#202020">
+                MINDSET
+                </h2>
+                <h4 class="sectionsubTit javascript_Css_define"javascript_Css_define="
+                0~640|640*1100$padding-left:22response;padding-bottom:30responh;padding-right:22response;font-size:18responmax;color:#202020^
+                641~1024|1024*1100$padding-left:53response;padding-bottom:44responh;padding-right:42response;font-size:22responmax;color:#202020^
+                1025~1920|1920*1080$padding-left:120response;padding-bottom:84responh;padding-right:42response;font-size:27responmin;color:#202020^
+                1921~9999|1920*1080$padding-left:120response;padding-bottom:84responmin;padding-right:42response;font-size:27responmin;color:#202020">
+                혼란스러운  2040년의 지구<br/>
+                EVILHUMANS에 의해 유린,착취당하는<br/>
+                인류,지구를 정상적으로 만들기 위해 형성된 집단
+                </h4>
+            </div>
+            
+            <div class="mediaList javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$padding-left:22response;padding-right:35response;display:block^
+            641~1024|1024*1100$padding-left:58response;padding-right:76response;display:flex;flex-flow:row wrap^
+            1025~1400|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap^
+            1401~1920|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap^
+            1921~9999|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap">
+            <!--모바일브라우저 기기일때는 모든 비디오리스트에서 비디오대신 섬네일이미지 표시되게하고, 피시브라우저기기일때는 태블릿이상크기일떄는 비디오로 나오게끔..자바스크립트로 처리필요.-->
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="characters/pinkyGameimg.jpg"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    핑키(Mindset 초인) |화염 | 분노,열정,야망
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="characters/windyGameimg.jpg"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    윈디(Mindset 초인) | 얼음&바람 | 냉정,온화,균형
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="characters/pukyGameimg.jpg"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    푸키(Mindset 초인) | 광기 | 광기,쾌락,비편견,용기
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="characters/rinrinGameimg.jpg"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    린린(Mindset 초인) | 파동 | 근면,성실,인내,각오,꾸준함
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="characters/kaiGameimg.jpg"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    카이(Mindset 초인) | TIGERsymobl | 근면,인내,꾸준함,결의,용맹
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="characters/LoidGameimg.jpg"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    로이드(Mindset 초인) | DRAGONsymobl | 긍정,용기,냉정
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="characters/RayGameimg.jpg"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    레이(Mindset 초인) | 번개 | 사랑,평화,긍정
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="characters/mimiGameimg.jpg"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    미미(Mindset 초인) | DarkEnergy | 공허,불명
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="characters/character0Face.png"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    스미스요원(혁명연합군) | 무기술 
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="img/creatorMe.png"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    SJS박사(MINDSET설립자) | ?????
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section2 enemyList javascript_Css_define position_relative_normal  overflow_hidden"
+    >
+        <div class="contentWrap position_relative_normal javascript_Css_define"style='z-index:9'javascript_Css_define="
+        0~640|640*1100$padding-bottom:290responmax;opacity:0.96^
+        641~1024|1024*1100$padding-bottom:203responmax;opacity:0.96^
+        1025~1920|1920*1080$padding-bottom:310responmin;opacity:0.96^
+        1921~9999|1920*1080$padding-bottom:310responmin;opacity:0.96">
+            <div class="sectionMessage">
+                <h2 class="sectionTit javascript_Css_define fontfamily_Montserrat_Bold"javascript_Css_define="
+                0~640|640*1100$padding-left:22response;padding-top:26responh;font-size:35responmin;padding-bottom:30responh;color:#202020^
+                641~1024|1024*1100$padding-left:53response;padding-top:95responh;font-size:60responmax;padding-bottom:30responh;color:#202020^
+                1025~1920|1920*1080$padding-left:116response;padding-top:201responh;font-size:103responmin;padding-bottom:57responh;color:#202020^
+                1921~9999|1920*1080$padding-left:116response;padding-top:201responh;font-size:103responmin;padding-bottom:57responmin;color:#202020">
+                EVILHumans
+                </h2>
+                <h4 class="sectionsubTit javascript_Css_define"javascript_Css_define="
+                0~640|640*1100$padding-left:22response;padding-bottom:30responh;padding-right:22response;font-size:18responmax;color:#202020^
+                641~1024|1024*1100$padding-left:53response;padding-bottom:44responh;padding-right:42response;font-size:22responmax;color:#202020^
+                1025~1920|1920*1080$padding-left:120response;padding-bottom:84responh;padding-right:42response;font-size:27responmin;color:#202020^
+                1921~9999|1920*1080$padding-left:120response;padding-bottom:84responmin;padding-right:42response;font-size:27responmin;color:#202020">
+                혼란스러운 지구를 통제하고<br/>
+                우주기술확보까지 하여 화성,달 까지 정복하여<br/>
+                우주패권까지 확보하려는 탐욕스러운 거물급 <br/>
+                통치자집단.
+                </h4>
+            </div>
+            
+            <div class="mediaList javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$padding-left:22response;padding-right:35response;display:block^
+            641~1024|1024*1100$padding-left:58response;padding-right:76response;display:flex;flex-flow:row wrap^
+            1025~1400|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap^
+            1401~1920|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap^
+            1921~9999|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap">
+            <!--모바일브라우저 기기일때는 모든 비디오리스트에서 비디오대신 섬네일이미지 표시되게하고, 피시브라우저기기일때는 태블릿이상크기일떄는 비디오로 나오게끔..자바스크립트로 처리필요.-->
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                        <img src="enemys/gunManFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | gunman | 화염총기 사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                        <img src="enemys/pistolmanFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | pistolMan | 치명적인 피스톨총 사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                        <img src="enemys/knifeManFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | knifeMan | 암살용 칼날사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                        <img src="enemys/shotgunmanFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | ShotGnuMan | 대구경샷건 최신형무기 사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                        <img src="enemys/SwordmanFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | SwordMan | 야만스러운 대검 사용 무자비한 학살을 즐김.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                        <img src="enemys/rocketmanFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | RocketMan | 중거리규모이상의 로켓바주카 사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                        <img src="enemys/blueAirunitFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | BlueMachine | 지상용경장갑 전투머신 model blue 강화포탄사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                        <img src="enemys/redAirunitFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | RedAirMachine | 지상~공중 범용 전투머신 model Red 작전용다이얼Boom 포탄 공중낙하가능.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                    <img src="enemys/TankFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                    0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | AK36 구룐Tank장갑차 | 지상대공 대형자주포사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                    <img src="enemys/coreManFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                    0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | 고위관리인 | 비전투원 참모진
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                    <img src="enemys/mecha1Face.png" class="display_block javascript_Css_define"javascript_Css_define="
+                    0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | 메카닉1Type:골리앗 | 다연장로켓바주카 연발식 사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                    <img src="enemys/mecha2Face.png" class="display_block javascript_Css_define"javascript_Css_define="
+                    0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | 메카닉2Type:디바우어 | 대범위 화염방사폭발 미사일 사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                    <img src="enemys/hellicopterFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                    0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | AK-SPACHE 대공전투헬기 | 다연장연발식 미사일 사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                    <img src="enemys/fighterPlaneFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                    0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | SCH7 전투기 | 전술용 소형 원자폭발미사일 사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                    <img src="enemys/mechaKingFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                    0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | AIMACHINE TOWER 메카CELLType 모델 | 대범위폭발 연발식로켓런쳐사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                    <img src="enemys/GodEvilFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                    0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | EvilHumanControlTower 탑승형 메카이족보행로봇모델 | Twin 전술소형 원자폭발미사일사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;background-color:#000^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;background-color:#000" >
+                    <img src="enemys/godAiFace.png" class="display_block javascript_Css_define"javascript_Css_define="
+                    0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys | AIMACHINE TOWER AI 사이보그로봇 여성형 | 반물질 폭탄 사용
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="img/humanEnemyAiStaffGroup.jpg"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys WEAPON and AiControl StaffGroup
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="img/humanGroupBoss.jpg"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    HumanEnemys 설립자 | 불명
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="js/transformanimate$p.js"></script>
+<script src="js/common_function$p.js"></script>
+<script src="js/CssStyleDefine_layout$p.js"></script>
+<script src="js/inputkeyboard_validate.js"></script>
+<script src="js/styleEffectAnimate$p.js"></script>
+<script src="js/scrollTest$p.js"></script>
+<script src="js/scrollContainerVisual$p.js"></script>
+<script src="js/accordionGroup.js"></script>
+<script src="js/javascript_tabMenuAndToggles.js"></script>
+<script src="js/mouseTouchMoveControl$p.js"></script>
+<script src="js/screentouch_scrollprevent$p.js"></script>
+<!--<script src="swiperRelated.js"></script>-->
+<script>
+update_allHtmlElements_toOriginId(document.body);//domcontenteloaded이전 html요소가 BrowserhtmlParser에 의해 랜더링되기 이전에 요소들을 추상적으로 구조화는 되어있는 상태에서 이러한 요소들에 개별적 부모자식계층id고유id를 부여한다.
+</script>
+<script src="scrollContainerGeneralGroupControls$p.js"></script>
+<script src="javascript_styleEffectTriggerControls$p.js"></script>
+<script type="importmap">
+    {
+        "imports":{
+            "three" : "https://sinjaesung.github.io/webPageTest/three.js-master/build/three.module.js",
+            "three/examples/jsm/controls/OrbitControls":"https://sinjaesung.github.io/webPageTest/three.js-master/examples/jsm/controls/OrbitControls.js"
+        }
+    }
+</script>
+<script type="module" src="animBaseMain_fixedMindset$p.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+html, body,
+div, span,
+dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, address, pre, cite,
+form, fieldset, input, textarea, select,
+table, th, td {
+	margin:0;
+	padding:0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:normal;
+	letter-spacing:normal;
+}
+
+fieldset, img, abbr,acronym { border:0 none; }
+
+ol, ul { list-style:none; }
+
+table {
+	border-collapse: separate;
+	border-spacing:0;
+	border:0 none;
+}
+caption, th, td {
+	text-align:left;
+	font-weight: normal;
+	border:0;
+}
+
+address, caption, strong, em, cite {
+	font-weight:normal;
+	font-style:normal;
+}
+ins { text-decoration:none; }
+del { text-decoration:line-through; }
+
+blockquote:before, blockquote:after, q:before, q:after { content:""; }
+blockquote,q { quotes:"" ""; }
+
+hr { display:none; }
+
+/* HTML5 Boilerplate  */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+img, video { /*max-width:100%;*/ border:0; vertical-align:top; }
+audio, canvas, video { display:inline-block; *display:inline; *zoom: 1; }
+
+* { margin:0; padding:0; border:0; outline:0; vertical-align:top; box-sizing:border-box; }
+ul, ol, dl { list-style:none; }
+a { vertical-align:top; text-decoration:none; color:inherit; }
+table { border-collapse:collapse; border-spacing:0; }
+input, select, label { vertical-align:middle;background-color:transparent;}
+button, input, select, textarea { margin:0; vertical-align:baseline; *vertical-align:middle;font-weight:normal;letter-spacing:normal;}
+button, input { line-height:normal;}
+button, select { text-transform:none; }
+
+select {
+     -webkit-appearance: none;/* 네이티브 외형 감추기*/
+     -moz-appearance: none;
+     appearance: none;
+    font-weight:normal;letter-spacing:normal;
+}
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand {
+    display: none;
+}
+label { cursor:pointer; }
+
+input[type="file"] {display:none}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance:none; }
+input[type="search"] { -webkit-appearance:textfield; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; }
+button::-moz-focus-inner, input::-moz-focus-inner { border:0; padding:0; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance:button; cursor: pointer; *overflow:visible; }
+input::placeholder{
+	color:#999
+}
+textarea::placeholder{
+	color:#e7e7e7
+}
+textarea { overflow:auto; vertical-align:top; resize:none}
+
+html,body{height:100%;background-color:#fff;
+-webkit-overflow-scrolling:auto}
+address{font-style:normal;}
+
+body {
+  font-family:"Noto Sans Kr","Noto Sans","Arial Regular","ARIAL",sans-serif;
+}
+button, input, select, textarea { font-family:"Noto Sans Kr","Noto Sans","Arial Regular","ARIAL",sans-serif;  font-weight:normal;letter-spacing:normal;}

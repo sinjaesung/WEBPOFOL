@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Bowling.css">
+
+    <script type="importmap">
+        {
+            "imports":{
+                "three" : "https://sinjaesung.github.io/webPageTest/three.js-master/build/three.module.js",
+                "three/examples/jsm/controls/OrbitControls":"https://sinjaesung.github.io/webPageTest/three.js-master/examples/jsm/controls/OrbitControls.js"
+            }
+        }
+    </script>
+
+    <script src="https://sinjaesung.github.io/webPageTest/three.js-master/examples/jsm/libs/ammo.wasm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="Bowling.js" defer></script>
+</head>
+<body>
+    <div id="webgl-container"></div>
+    <div id="try-again">Try Again!</div>
+
+    <div class="description">
+        <p>1.화면에서 볼링핀방향으로 마우스or손가락 드래그드롭(mousedown->mouseup)</p>
+        <p>2.액션시에 볼링공이 발사됩니다.손가락이 드래그상태에서 뗀순간 공이발사됩니다.</p>
+    </div>
+</body>
+</html> 

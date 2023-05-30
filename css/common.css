@@ -1,0 +1,2037 @@
+/*font처리*/
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap');
+
+@font-face{
+    font-family:'NewBaskerville_Roman';
+    src: url('../fonts/NewBaskerville_Roman.eot'),
+    url('../fonts/NewBaskerville_Roman.woff2'),
+    url('../fonts/NewBaskerville_Roman.ttf')
+}
+@font-face{
+    font-family:'Avenir';
+    src:url('../fonts/AvenirLTStd-Roman.otf')
+}
+@font-face{
+    font-family:'Montserrat_Black';
+    src:url('../fonts/Montserrat/static/Montserrat-Black.ttf')
+}
+@font-face{
+    font-family:'Montserrat_Bold';
+    src:url('../fonts/Montserrat/static/Montserrat-Bold.ttf')
+}
+@font-face{
+    font-family:'Montserrat_ExtraBold';
+    src:url('../fonts/Montserrat/static/Montserrat-ExtraBold.ttf')
+}
+@font-face{
+    font-family:'Montserrat_ExtraLight';
+    src:url('../fonts/Montserrat/static/Montserrat-ExtraLight.ttf')
+}
+@font-face{
+    font-family:'Montserrat_Light';
+    src:url('../fonts/Montserrat/static/Montserrat-Light.ttf')
+}
+@font-face{
+    font-family:'Montserrat_Medium';
+    src:url('../fonts/Montserrat/static/Montserrat-Medium.ttf')
+}
+@font-face{
+    font-family:'Montserrat_Regular';
+    src:url('../fonts/Montserrat/static/Montserrat-Regular.ttf')
+}
+
+/*pageLoader common 해상도별 all 공통*/
+#pageLoader{
+    z-index:9999;display:flex; justify-content:center;align-items:center;
+    position:fixed; width:100%; height:100vh; left:0; top:0; 
+    background-color:#fff; opacity:1
+}
+#pageLoaders{
+    z-index:9999;display:flex; justify-content:center;align-items:center;
+    position:fixed; width:100%; height:100vh; left:0; top:0; 
+    background-color:#fff; opacity:1
+}
+#pageLoadersMainWrap{
+    z-index:9999;display:flex; justify-content:center;align-items:center;
+    position:fixed; width:100%; height:100vh; left:0; top:0; 
+    background-color:#fff; opacity:1
+}
+
+#javascript_scrollContainer{
+    height:100vh;overflow-y:auto;
+}
+/*폰트스타일 기타스타일 공통  [[기기별 전역범위사용]]*/
+.fontfamily_NewBaskerville_Roman{
+    font-family:'NewBaskerville_Roman'
+}
+.fontfamily_Avenir{
+    font-family:"Avenir"
+}
+.fontfamily_Montserrat_Black{
+    font-family:'Montserrat_Black'
+}
+.fontfamily_Montserrat_Bold{
+    font-family:'Montserrat_Bold'
+}
+.fontfamily_Montserrat_Light{
+    font-family:'Montserrat_Light'
+}
+.fontfamily_Montserrat_Medium{
+    font-family:'Montserrat_Medium'
+}
+.fontfamily_Montserrat_Regular{
+    font-family:'Montserrat_Regular'
+}
+.cursorpointer{
+    cursor:pointer
+}
+.linethrough{
+    text-decoration:line-through
+}
+.fontweight_100{
+    font-weight:100
+}
+.fontweight_200{
+    font-weight:200
+}
+.fontweight_300{
+    font-weight:300
+}
+.fontweight_400{
+    font-weight:400
+}
+.fontweight_500{
+    font-weight:500
+}
+.fontweight_600{
+    font-weight:600
+}
+.fontweight_700{
+    font-weight:700
+}
+.fontweight_800{
+    font-weight:800
+}
+.fontweight_900{
+    font-weight:900
+}
+/*styles*/
+.popupbg{
+    background-color:rgba(0,0,0,0.7); position:fixed; z-index:600; 
+     left:0;top:0; width:100%;height:100vh;
+}
+.naviWrap{
+    position:fixed;left:0;top:0; width:100%;height:0;
+}
+
+/*기타 제어  [[기기별 전역범위사용]]*/
+.zindex50{
+    z-index:50
+}
+.zindex550{
+    z-index:550
+}
+.zindex999{
+    z-index:999
+}
+.zindex9999{
+    z-index:9999
+}
+.display_block{
+    display:block
+}
+.display_inlineblock{
+    display:inline-block;
+}
+.display_inlineflex{
+    display:inline-flex !important;
+}
+.display_none{
+    display:none;
+}
+.display_flex{
+    display:flex;
+}
+
+.borderstyle_solid{
+    border-style:solid;
+}
+.borderstyle_dotted{
+    border-style:dotted
+}
+.text-null{
+    opacity:0
+}
+.text_wordbreak_all{
+    word-break:break-all;
+}
+.radio_element{
+    display:none !important
+}
+.checkbox_element{
+    display:none !important
+}
+.float_right{
+    float:right !important;
+}
+.float_left{
+    float:left !important;
+}
+
+/*체크박스,라디오버튼 등 inputform관련 어떤 데이터관련 처리*/
+.checkbox_element:checked + label.checkboxlabelstyle1{
+    background-color:#e3d0c0
+}
+.checkbox_element + label.checkboxlabelstyle1{
+    background-color:transparent;
+}
+.checkbox_element:checked + label.checkboxlabelstyle2 > .check{
+    display:block
+}
+.checkbox_element:checked + label.checkboxlabelstyle2 > .uncheck{
+    display:none
+}
+.checkbox_element + label.checkboxlabelstyle2 > .check{
+    display:none
+}
+.checkbox_element + label.checkboxlabelstyle2 > .uncheck{
+    display:block
+}
+.checkbox_element + label.checklabel1 > img {
+    display:none;
+}
+.checkbox_element:checked + label.checklabel1 > img{
+    display:block
+}
+
+.radio_element:checked + label.checkboxlabelstyle1{
+    background-color:#e3d0c0
+}
+.radio_element + label.checkboxlabelstyle1{
+    background-color:transparent;
+}
+.radio_element:checked + label.checkboxlabelstyle2 > .check{
+    display:block
+}
+.radio_element:checked + label.checkboxlabelstyle2 > .uncheck{
+    display:none
+}
+.radio_element + label.checkboxlabelstyle2 > .check{
+    display:none
+}
+.radio_element + label.checkboxlabelstyle2 > .uncheck{
+    display:block
+}
+
+.radio_element + label.checkboxlabelstyle3{
+   background-color:#e3d0c0
+}
+.radio_element:checked + label.checkboxlabelstyle3{
+    background-color:#fff
+}
+.radio_element:checked + label.checkboxlabelstyle3::after{
+    display:block;content:''; position:absolute;
+    bottom:0; width:100%;height:2px; background-color:#303031
+}
+.radio_element ~ label.checklabel1 > img{
+    display:none;
+}
+.radio_element:checked ~ label.checklabel1 > img{
+    display:block
+}
+.radio_element ~ label.labelbg{
+
+}
+.radio_element:checked ~ label.labelbg{
+    background-color:#e3d0c0
+}
+
+.radio_element ~ label.checkradio1 > span{
+    display:none;
+}
+.radio_element:checked ~ label.checkradio1 >span{
+    display:block;
+}
+
+/*공통적 위치제어관련   [[기기별 전역범위사용]]*/
+.position_relative_zindex3{
+    position:relative;z-index:3
+}
+.position_relative_normal{
+    position:relative;
+}
+.position_absolute{
+    position:absolute;
+}
+.position_fixed{
+    position:fixed;
+}
+
+/*layoutss*/
+.flex_horizontal_flexEnd{
+    justify-content:flex-end;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+}
+.flex_horizontal_flexStart{
+    justify-content:flex-start;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+}
+.flex_horizontal_spaceBetween{
+    justify-content:space-between;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+}
+.flex_horizontal_Center{
+    justify-content:center;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+}
+.flex_alignitems_flexStart{
+    align-items:flex-start !important;display:flex;flex-flow:row wrap;align-content:flex-start
+}
+.flex_alignitems_flexEnd{
+    align-items:flex-end !important;display:flex;flex-flow:row wrap;align-content:flex-end
+}
+.flex_alignitems_spaceBetween{
+    align-items:flex-start;display:flex;flex-flow:row wrap;align-content:space-between
+}
+.flex_nowrap{
+    flex-flow:row nowrap;
+}
+.flexorder_1{
+    order:1
+}
+.flexorder_2{
+    order:2
+}
+.flexorder_3{
+    order:3
+}
+.flexorder_4{
+    order:4
+}
+.flexorder_5{
+    order:5
+}
+.flexorder_6{
+    order:6
+}
+.flexorder_7{
+    order:7
+}
+.flexorder_8{
+    order:8
+}
+.flexorder_9{
+    order:9
+}
+.flexorder_10{
+    order:10
+}
+.flexorder_11{
+    order:11
+}
+.flexorder_12{
+    order:12
+}
+.flexorder_13{
+    order:13
+}
+.overflow_auto{
+    overflow-y:auto
+}
+.overflow_hidden{
+    overflow:hidden !important;
+}
+.overflow_visible{
+    overflow:visible !important
+}
+
+.textalignCenter{
+    text-align:center !important;
+}
+.textalignLeft{
+    text-align:left !important;
+}
+.textalignRight{
+    text-align:right !important;
+}
+.textoverflow_prevent_singlerow{
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.marginhorizontal_auto{
+    margin:0 auto
+}
+.marginvertical_auto{
+    margin:auto 0;
+}
+.margin_auto{
+    margin:auto;
+}
+
+.positiontop_0{
+    top:0 ;
+}
+.positionbottom_0{
+    bottom:0 ;
+}
+.positionright_0{
+    right:0 ;
+}
+.positionleft_0{
+    left:0 ;
+}
+.positiontop_auto{
+    top:auto ;
+}
+.positionbottom_auto{
+    bottom:auto ;
+}
+.positionleft_auto{
+    left:auto ;
+}
+.positionright_auto{
+    right:auto ;
+}
+.positiontop_100percent{
+    top:100% ;
+}
+.positionright_100percent{
+    right:100% ;
+}
+.positionbottom_100percent{
+    bottom:100%;
+}
+.positionleft_100percent{
+    left:100%;
+}
+.positiontop_0_important{
+    top:0 !important;
+}
+.positionbottom_0_important{
+    bottom:0 !important;
+}
+.positionright_0_important{
+    right:0 !important;
+}
+.positionleft_0_important{
+    left:0 !important;
+}
+.positiontop_auto_important{
+    top:auto !important;
+}
+.positionbottom_auto_important{
+    bottom:auto !important;
+}
+.positionleft_auto_important{
+    left:auto !important;
+}
+.positionright_auto_important{
+    right:auto !important;
+}
+.positiontop_100percent_important{
+    top:100% !important;
+}
+.positionright_100percent_important{
+    right:100% !important;
+}
+.positionbottom_100percent_important{
+    bottom:100% !important;
+}
+.positionleft_100percent_important{
+    left:100% !important;
+}
+.width_100_percent{
+    width:100% ;
+}
+.height_100_percent{
+    height:100% 
+}
+.height_100vh{
+    height:100vh;
+}
+.width_100_percent_important{
+    width:100% !important;
+}
+.height_100_percent_important{
+    height:100% !important
+}
+.height_100vh_important{
+    height:100vh !important;
+}
+
+.Xoverflow_horizontal_list{
+    display:block;white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+    -webkit-overflow-scrolling:touch
+}
+.Xoverflow_horizontal_list::-webkit-scrollbar{
+    display:none;
+}
+.Xoverflow_horizontal_list .item{
+    display:inline-block; white-space:normal;
+}
+.Xoverflow_horizontal_list .item > *{
+    white-space:normal;
+}
+.Xoverflow_horizontal_list_scrollvisible{
+    display:block;white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+    -webkit-overflow-scrolling:touch
+}
+.Xoverflow_horizontal_list_scrollvisible .item{
+    display:inline-block; white-space:normal;
+}
+.Xoverflow_horizontal_list_scrollvisible .item > *{
+    white-space:normal;
+}
+
+/*특수적인 효과 ,어떤 특정효과   [[기기별 전역범위사용]]*/
+
+.itemRadius{
+    position:relative;background-color:transparent;
+}
+.itemRadius .borderradiusDeco{
+    width:100%;height:100%;position:absolute;left:0%;top:0%;z-index:2; border-color:rgba(230,230,230,0.5);border-style:solid;background-color:transparent;border-radius:50%
+}
+.itemRadius img{
+    z-index:0
+}
+.shadow_blur{
+    width:100%;height:100%;display:block;position:absolute;left:0;top:0;background-color:rgba(30,30,30,0.3);z-index:1
+}
+.shadow_blur2{
+    width:100%;height:100%;display:block;position:absolute;left:0;top:0;background:linear-gradient(114deg, rgba(0,0,0,0.8) 7%, rgba(0,0,0,0.2) 83%);z-index:1
+}
+
+.blackgradient{
+    background:linear-gradient(to bottom,#a4a5a7,#363733);
+}
+
+
+.traiangle1{
+    border-top-color:transparent !important;transform:translateY(30%)
+}
+.traiangle2{
+    border-top-color:transparent !important;transform:translateY(30%)
+}
+.opacity0{
+    opacity:0
+}
+@keyframes rotate360{
+    from{
+        transform:rotateZ(0deg)
+    }
+    to{
+        transform:rotateZ(360deg)
+    }
+}
+@keyframes rotate180{
+    from{
+        transform:rotateZ(0deg)
+    }
+    to{
+        transform:rotateZ(180deg)
+    }
+ }
+.rotate360_infinite{
+    animation-name:rotate360;animation-timing-function:linear;
+    animation-duration:1.5s;animation-direction:normal;animation-iteration-count:infinite;
+}
+.rotate180_animation{
+    animation-name:rotate180;animation-timing-function:linear;
+    animation-duration:0.5s;animation-direction:normal;animation-fill-mode: forwards;
+}
+.rotate90_fix{
+    transform:rotateZ(90deg)
+}
+.rotate180_fix{
+    transform:rotateZ(180deg)
+}
+
+
+/*swiper pagination common style project per local stylesss*/
+.swiper-pagination .swiper-pagination-bullet{
+    background-color:#c7c7c7;
+}
+.swiper-pagination .swiper-pagination-bullet-active{
+    background-color:#fe1020
+}
+.swiper-pagination-progressbar{
+    background:#ccc !important;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background:#303031 !important
+}
+.swiper-button-prev{
+    background-image:url('../img/mobile/naviArrow2.png') !important;background-position:center !important;
+    background-size:cover !important;
+}
+.swiper-button-next{
+    background-image:url('../img/mobile/naviArrow1.png') !important;background-position:center !important;
+    background-size:cover !important;
+}
+
+/*색상관련 공통 색상스타일 project pers  [[기기별 전역범위사용]]*/
+.bgcolor_graywhite{
+    background-color:#f8f8f8 !important
+}
+.bgcolor_beizi{
+    background-color:#fdf8f4 !important
+}
+.bgcolor_transparent{
+    background-color:transparent !important;
+}
+.bgcolor_white{
+    background-color:white !important
+}
+.bgcolor_gray{
+    background-color:#eee !important
+}
+.bgcolor_gray1{
+    background-color:#cfcfcf !important
+}
+.bgcolor_gray2{
+    background-color:#565656 !important
+}
+.bgcolor_gray3{
+    background-color:#8d8d8d !important
+}
+.bgcolor_gray4{
+    background-color:#333333 !important
+}
+
+.bgcolor_yellow{
+    background-color:#ffe812 !important
+}
+.bgcolor_green{
+    background-color:#01c73c  !important
+}
+.bgcolor_black{
+    background-color:#303031 !important
+}
+.bgcolor_black1{
+    background-color:#414141 !important
+}
+.bgcolor_black2{
+    background-color:#0d0d0d !important
+}
+.bgcolor_black3{
+    background-color:#0e121b !important
+}
+.bgcolor_dark{
+    background-color:#000 !important
+}
+.bgcolor_blue{
+    background-color:#2398ff !important
+}
+
+.bgcolor_ozicgradient1{
+    background:linear-gradient(136deg, #6739ff 30%, #00c8ff 120%)
+}
+.bgcolor_red{
+    background-color:#ff2e5a !important
+}
+.bgcolor_red2{
+    background-color:#d45a44 !important
+}
+.bgcolor_red3{
+    background-color:#dca07d !important
+}
+.bgcolor_red4{
+    background-color:#ff5c1f !important
+}
+.bgcolor_red5{
+    background-color:#ff6620 !important
+}
+.bgcolor_warmbrightness{
+    background-color:#faf0e7 !important
+}
+.bgcolor_warmbrightness2{
+    background-color:#f8eadc !important
+}
+.bgcolor_warm1{
+    background-color:#e7cfbe !important
+}
+.bgcolor_warm2{
+    background-color:#e7cfbe !important
+}
+.bgcolor_browngold{
+    background-color:#dca07d !important
+}
+.bgcolor_lecelle1{
+    background-color:#ccb8a7 !important
+}
+.bgcolor_lecelle2{
+    background-color:#f09d0c !important
+}
+.bgcolor_purple1{
+    background-color:#4806C5 !important
+}
+
+.colorblue{
+    color:#2398ff !important
+}
+.colorblue2{
+    color:#79a0c5 !important
+}
+.colorwhite{
+    color:white !important
+}
+.colorblack{
+    color:#303031 !important
+}
+.colorblack1{
+    color:#414141 !important
+}
+.colorblack2{
+    color:#646464 !important
+}
+.colorred{
+    color:#d45a44 !important
+}
+
+.colorgray{
+    color:#a1a1a1 !important
+}
+.colorgray1{
+    color:#808080 !important
+}
+.colorgray2{
+    color:#eee !important
+}
+.colorgray3{
+    color:#9f9e9e !important
+}
+.colorgray4{
+    color:#404040 !important
+}
+.colorgray5{
+    color:#86827f !important
+}
+
+.colorred2{
+    color:#ff2e5a !important
+}
+.colorlecelle1{
+    color:#dca07d !important
+}
+.colorlecelle2{
+    color:#94776d !important
+}
+.colorlecelle3{
+    color:#e7cfbe !important
+}
+.colorpurple1{
+    color:#8d68fd !important
+}
+
+.bordercolorblue{
+    border-color:#2398ff !important
+}
+.bordercolorblack{
+    border-color:#565656 !important
+}
+.bordercolordark{
+    border-color:#000 !important
+}
+.bordercolorblack1{
+    border-color:#414141 !important
+}
+.bordercolorgray{
+    border-color:#cfcfcf !important
+}
+.bordercolorgray1{
+    border-color:#858585 !important
+}
+.bordercolorgray2{
+    border-color:#f3f3f3 !important
+}
+.bordercolorgray3{
+    border-color:#afafaf !important
+}
+.bordercolorred{
+    border-color:#ff2e5a !important
+}
+.bordercolorred2{
+    border-color:#d45a44 !important
+}
+.bordercolortransparent{
+    border-color:transparent !important
+}
+.bordercolorwhite{
+    border-color:white  !important
+}
+.bordercolorlecelle1{
+    border-color:#e7cfbe !important
+}
+.bordercolorlecelle2{
+    border-color:#f2e2d6 !important
+}
+
+/*배경이미지 이미지관련처리(viewing)   [[기기별 전역범위사용]]*/
+.css_background_cover_center{
+    background-size:cover;background-repeat:no-repeat;background-position:center
+}
+.img_background_cover_center{
+    position:absolute;width:100%;height:100%;display:block;z-index:0;left:50%;top:50%;transform:translateX(-50%) translateY(-50%)
+}
+.img_background_cover_width_center{
+    position:absolute;width:100%;height:auto;display:block;z-index:0;left:50%;top:50%;transform:translateX(-50%) translateY(-50%)
+}
+.img_background_cover_height_center{
+    position:absolute;height:100%;width:auto;display:block;z-index:0;left:50%;top:50%;transform:translateX(-50%) translateY(-50%)
+}
+.img_background_cover_height_right{
+    position:absolute;height:100%;width:auto;display:block;z-index:0;right:0;top:50%;transform:translateX(0%) translateY(-50%)
+}
+.img_background_cover_width_right{
+    position:absolute;height:auto;width:100%;display:block;z-index:0;right:0;top:50%;transform:translateX(0%) translateY(-50%)
+}
+.img_background_cover_width_center_top{
+    position:absolute;width:100%;height:auto;display:block;z-index:0;left:50%;top:0%;transform:translateX(-50%)
+}
+.img_background_cover_height_center_top{
+    position:absolute;height:100%;width:auto;display:block;z-index:0;left:50%;top:0;transform:translateX(-50%)
+}
+.img_background_cover_height{
+    position:absolute;height:100%;width:auto;display:block;z-index:0;left:0%;top:0
+}
+
+
+
+@media all and (max-width:768px){
+    .container{
+        width:100%;height:auto;display:block; margin:0 auto;overflow:hidden;min-height:100vh;position:relative
+    }
+
+    /*transform관련 레이아웃별기기별*/
+    .mobile_transform_rotate180deg{
+        transform:rotateZ(180deg);
+    }
+    .mobile_transform_rotateminus180deg{
+        transform:rotateZ(-180deg);
+    }
+    .mobile_transform_rotate90deg{
+        transform:rotateZ(90deg);
+    }
+    .mobile_transform_rotateminus90deg{
+        transform:rotateZ(-90deg);
+    }
+
+    /* 레이아웃 관련 기기별로 다를수있으므로 분기스타일지정가능토록 필요 레이아웃 [[기기별 분기별 공통스타일]]*/
+    .mobile_bgcolor_transparent{
+        background-color:transparent
+    }
+    .mobile_position_relative_zindex3{
+        position:relative;z-index:3
+    }
+    .mobile_position_relative_normal{
+        position:relative;
+    }
+    .mobile_position_absolute{
+        position:absolute;
+    }
+    .mobile_position_fixed{
+        position:fixed;
+    }
+    .mobile_position_relative_normal_important{
+        position:relative !important;
+    }
+    .mobile_position_absolute_important{
+        position:absolute !important;;
+    }
+    .mobile_position_fixed_important{
+        position:fixed !important;;
+    }
+
+    .mobile_overflow_auto{
+        overflow-y:auto
+    }
+    .mobile_overflow_hidden{
+        overflow:hidden !important;
+    }
+    .mobile_overflow_visible{
+        overflow:visible !important
+    }
+
+    .mobile_textalignCenter{
+        text-align:center !important;
+    }
+    .mobile_textalignLeft{
+        text-align:left !important;
+    }
+    .mobile_textalignRight{
+        text-align:right !important;
+    }
+    .mobile_textoverflow_prevent_singlerow{
+        overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    }
+    .mobile_marginhorizontal_auto{
+        margin:0 auto
+    }
+    .mobile_marginvertical_auto{
+        margin:auto 0;
+    }
+
+    .mobile_positiontop_0{
+        top:0 ;
+    }
+    .mobile_positionbottom_0{
+        bottom:0 ;
+    }
+    .mobile_positionright_0{
+        right:0 ;
+    }
+    .mobile_positionleft_0{
+        left:0 ;
+    }
+    .mobile_positiontop_auto{
+        top:auto ;
+    }
+    .mobile_positionbottom_auto{
+        bottom:auto ;
+    }
+    .mobile_positionleft_auto{
+        left:auto ;
+    }
+    .mobile_positionright_auto{
+        right:auto ;
+    }
+    .mobile_positiontop_100percent{
+        top:100% ;
+    }
+    .mobile_positionright_100percent{
+        right:100% ;
+    }
+    .mobile_positionbottom_100percent{
+        bottom:100%;
+    }
+    .mobile_positionleft_100percent{
+        left:100%;
+    }
+    .mobile_positiontop_0_important{
+        top:0 !important;
+    }
+    .mobile_positionbottom_0_important{
+        bottom:0 !important;
+    }
+    .mobile_positionright_0_important{
+        right:0 !important;
+    }
+    .mobile_positionleft_0_important{
+        left:0 !important;
+    }
+    .mobile_positiontop_auto_important{
+        top:auto !important;
+    }
+    .mobile_positionbottom_auto_important{
+        bottom:auto !important;
+    }
+    .mobile_positionleft_auto_important{
+        left:auto !important;
+    }
+    .mobile_positionright_auto_important{
+        right:auto !important;
+    }
+    .mobile_positiontop_100percent_important{
+        top:100% !important;
+    }
+    .mobile_positionright_100percent_important{
+        right:100% !important;
+    }
+    .mobile_positionbottom_100percent_important{
+        bottom:100% !important;
+    }
+    .mobile_positionleft_100percent_important{
+        left:100% !important;
+    }
+    .mobile_width_100_percent{
+        width:100% ;
+    }
+    .mobile_height_100_percent{
+        height:100% 
+    }
+    .mobile_height_100vh{
+        height:100vh;
+    }
+    .mobile_width_100_percent_important{
+        width:100% !important;
+    }
+    .mobile_height_100_percent_important{
+        height:100% !important
+    }
+    .mobile_height_100vh_important{
+        height:100vh !important;
+    }
+
+    .mobile_Xoverflow_horizontal_list{
+        display:block;white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+        -webkit-overflow-scrolling:touch
+    }
+    .mobile_Xoverflow_horizontal_list::-webkit-scrollbar{
+        display:none;
+    }
+    .mobile_Xoverflow_horizontal_list .item{
+        display:inline-block; white-space:normal;
+    }
+    .mobile_Xoverflow_horizontal_list .item > *{
+        white-space:normal;
+    }
+    .mobile_Xoverflow_horizontal_list_scrollvisible{
+        display:block;white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+        -webkit-overflow-scrolling:touch
+    }
+    .mobile_Xoverflow_horizontal_list_scrollvisible .item{
+        display:inline-block; white-space:normal;
+    }
+    .mobile_Xoverflow_horizontal_list_scrollvisible .item > *{
+        white-space:normal;
+    }
+
+    .mobile_textvertical_lr{
+        writing-mode:vertical-lr;
+    }
+    .mobile_textvertical_rl{
+        writing-mode:vertical-rl;
+    }
+    
+    .mobile_flex_shrink0{
+        flex-shrink:0
+    }
+    .mobile_flex_shrink1{
+        flex-shrink:1
+    }
+    .mobile_flex_shrink2{
+        flex-shrink:2
+    }
+    .mobile_flex_shrink3{
+        flex-shrink:3
+    }
+    .mobile_flex_shrink4{
+        flex-shrink:4
+    }
+    .mobile_flex_shrink5{
+        flex-shrink:5
+    }
+    .mobile_flex_shrink6{
+        flex-shrink:6
+    }
+    .mobile_flex_shrink7{
+        flex-shrink:7
+    }
+    .mobile_flex_shrink8{
+        flex-shrink:8
+    }
+    .mobile_flex_shrink9{
+        flex-shrink:9
+    }
+    .mobile_flex_shrink10{
+        flex-shrink:10
+    }
+    .mobile_flex_grow1{
+        flex-grow:1
+    }
+    .mobile_flex_grow2{
+        flex-grow:2
+    }
+    .mobile_flex_grow3{
+        flex-grow:3
+    }
+    .mobile_flex_grow4{
+        flex-grow:4
+    }
+    .mobile_flex_grow5{
+        flex-grow:5
+    }
+    .mobile_flex_grow6{
+        flex-grow:6
+    }
+    .mobile_flex_grow7{
+        flex-grow:7
+    }
+    .mobile_flex_grow8{
+        flex-grow:8
+    }
+    .mobile_flex_grow9{
+        flex-grow:9
+    }
+    .mobile_flex_grow10{
+        flex-grow:10
+    }
+
+    .mobile_flex_horizontal_flexEnd{
+        justify-content:flex-end;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .mobile_flex_horizontal_flexStart{
+        justify-content:flex-start;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .mobile_flex_horizontal_spaceBetween{
+        justify-content:space-between;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .mobile_flex_horizontal_Center{
+        justify-content:center;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .mobile_flex_alignitems_flexStart{
+        align-items:flex-start !important;display:flex;flex-flow:row wrap;align-content:flex-start
+    }
+    .mobile_flex_alignitems_flexEnd{
+        align-items:flex-end !important;display:flex;flex-flow:row wrap;align-content:flex-end
+    }
+    .mobile_flex_alignitems_spaceBetween{
+        align-items:flex-start;display:flex;flex-flow:row wrap;align-content:space-between
+    }
+    .mobile_flex_nowrap{
+        flex-flow:row nowrap;
+    }
+    .mobile_flexorder_1{
+        order:1
+    }
+    .mobile_flexorder_2{
+        order:2
+    }
+    .mobile_flexorder_3{
+        order:3
+    }
+    .mobile_flexorder_4{
+        order:4
+    }
+    .mobile_flexorder_5{
+        order:5
+    }
+    .mobile_flexorder_6{
+        order:6
+    }
+    .mobile_flexorder_7{
+        order:7
+    }
+    .mobile_flexorder_8{
+        order:8
+    }
+    .mobile_flexorder_9{
+        order:9
+    }
+    .mobile_flexorder_10{
+        order:10
+    }
+    .mobile_flexorder_11{
+        order:11
+    }
+    .mobile_flexorder_12{
+        order:12
+    }
+    .mobile_flexorder_13{
+        order:13
+    }
+    /*요소 크기 제어 초기화 특정연산 공통적 사용(모바일,모바일태블릿,피시,피시고정)   [[기기별 전역범위사용]]*/
+    .mobile_auto_height{
+        height:auto ;
+    }
+    .mobile_width_auto{
+        width:auto ;
+    }
+    .mobile_height_auto{
+        height:auto ;
+    }
+    .mobile_width_0{
+        width:0 ;
+    }
+    .mobile_height_0{
+        height:0 ;
+    }
+    .mobile_padding_0{
+        padding:0  ;
+    }
+    .mobile_margin_0{
+        margin:0 ;
+    }
+    .mobile_border_0{
+        border:0 ;
+    }
+    .mobile_auto_height_important{
+        height:auto !important;
+    }
+    .mobile_width_auto_important{
+        width:auto !important;;
+    }
+    .mobile_height_auto_important{
+        height:auto !important;
+    }
+    .mobile_width_0_important{
+        width:0 !important;
+    }
+    .mobile_height_0_important{
+        height:0 !important;
+    }
+    .mobile_padding_0_important{
+        padding:0  !important;
+    }
+    .mobile_margin_0_important{
+        margin:0 !important;
+    }
+    .mobile_border_0_important{
+        border:0 !important;
+    }
+    .mobile_onlyview{
+        display:block;
+    }
+    .tablet_onlyview{
+        display:none
+    }
+    .pc_onlyview{
+        display:none
+    }
+    .mobile_flexonlyview{
+        display:flex;
+    }
+    .tablet_flexonlyview{
+        display:none
+    }
+    .pc_flexonlyview{
+        display:none
+    }
+
+    .mobile_display_block{
+        display:block
+    }
+    .mobile_display_inlineblock{
+        display:inline-block;
+    }
+    .mobile_display_inlineflex{
+        display:inline-flex !important;
+    }
+    .mobile_display_none{
+        display:none;
+    }
+    .mobile_display_flex{
+        display:flex;
+    }
+
+
+}
+
+@media all and (min-width:769px) and (max-width:1024px){
+    .container{
+        width:100%;height:auto;display:block; margin:0 auto;overflow:hidden;min-height:100vh;position:relative
+    }
+
+
+     /*transform관련 레이아웃별기기별*/
+    .tablet_transform_rotate180deg{
+        transform:rotateZ(180deg);
+    }
+    .tablet_transform_rotateminus180deg{
+        transform:rotateZ(-180deg);
+    }
+    .tablet_transform_rotate90deg{
+        transform:rotateZ(90deg);
+    }
+    .tablet_transform_rotateminus90deg{
+        transform:rotateZ(-90deg);
+    }
+
+    /* 레이아웃 관련 기기별로 다를수있으므로 분기스타일지정가능토록 필요 레이아웃 [[기기별 분기별 공통스타일]]*/
+    .tablet_bgcolor_transparent{
+        background-color:transparent
+    }
+    .tablet_position_relative_zindex3{
+        position:relative;z-index:3
+    }
+    .tablet_position_relative_normal{
+        position:relative;
+    }
+    .tablet_position_absolute{
+        position:absolute;
+    }
+    .tablet_position_fixed{
+        position:fixed;
+    }
+    .tablet_position_relative_normal_important{
+        position:relative !important;
+    }
+    .tablet_position_absolute_important{
+        position:absolute !important;
+    }
+    .tablet_position_fixed_important{
+        position:fixed !important;
+    }
+
+    .tablet_overflow_auto{
+        overflow-y:auto
+    }
+    .tablet_overflow_hidden{
+        overflow:hidden !important;
+    }
+    .tablet_overflow_visible{
+        overflow:visible !important
+    }
+
+    .tablet_textalignCenter{
+        text-align:center !important;
+    }
+    .tablet_textalignLeft{
+        text-align:left !important;
+    }
+    .tablet_textalignRight{
+        text-align:right !important;
+    }
+    .tablet_textoverflow_prevent_singlerow{
+        overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    }
+    .tablet_marginhorizontal_auto{
+        margin:0 auto
+    }
+    .tablet_marginvertical_auto{
+        margin:auto 0;
+    }
+
+    .tablet_positiontop_0{
+        top:0 ;
+    }
+    .tablet_positionbottom_0{
+        bottom:0 ;
+    }
+    .tablet_positionright_0{
+        right:0 ;
+    }
+    .tablet_positionleft_0{
+        left:0 ;
+    }
+    .tablet_positiontop_auto{
+        top:auto ;
+    }
+    .tablet_positionbottom_auto{
+        bottom:auto ;
+    }
+    .tablet_positionleft_auto{
+        left:auto ;
+    }
+    .tablet_positionright_auto{
+        right:auto ;
+    }
+    .tablet_positiontop_100percent{
+        top:100% ;
+    }
+    .tablet_positionright_100percent{
+        right:100% ;
+    }
+    .tablet_positionbottom_100percent{
+        bottom:100%;
+    }
+    .tablet_positionleft_100percent{
+        left:100%;
+    }
+    .tablet_positiontop_0_important{
+        top:0 !important;
+    }
+    .tablet_positionbottom_0_important{
+        bottom:0 !important;
+    }
+    .tablet_positionright_0_important{
+        right:0 !important;
+    }
+    .tablet_positionleft_0_important{
+        left:0 !important;
+    }
+    .tablet_positiontop_auto_important{
+        top:auto !important;
+    }
+    .tablet_positionbottom_auto_important{
+        bottom:auto !important;
+    }
+    .tablet_positionleft_auto_important{
+        left:auto !important;
+    }
+    .tablet_positionright_auto_important{
+        right:auto !important;
+    }
+    .tablet_positiontop_100percent_important{
+        top:100% !important;
+    }
+    .tablet_positionright_100percent_important{
+        right:100% !important;
+    }
+    .tablet_positionbottom_100percent_important{
+        bottom:100% !important;
+    }
+    .tablet_positionleft_100percent_important{
+        left:100% !important;
+    }
+    .tablet_width_100_percent{
+        width:100% ;
+    }
+    .tablet_height_100_percent{
+        height:100% 
+    }
+    .tablet_height_100vh{
+        height:100vh;
+    }
+    .tablet_width_100_percent_important{
+        width:100% !important;
+    }
+    .tablet_height_100_percent_important{
+        height:100% !important
+    }
+    .tablet_height_100vh_important{
+        height:100vh !important;
+    }
+
+    .tablet_Xoverflow_horizontal_list{
+        display:block;white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+        -webkit-overflow-scrolling:touch
+    }
+    .tablet_Xoverflow_horizontal_list::-webkit-scrollbar{
+        display:none;
+    }
+    .tablet_Xoverflow_horizontal_list .item{
+        display:inline-block; white-space:normal;
+    }
+    .tablet_Xoverflow_horizontal_list .item > *{
+        white-space:normal;
+    }
+    .tablet_Xoverflow_horizontal_list_scrollvisible{
+        display:block;white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+        -webkit-overflow-scrolling:touch
+    }
+    .tablet_Xoverflow_horizontal_list_scrollvisible .item{
+        display:inline-block; white-space:normal;
+    }
+    .tablet_Xoverflow_horizontal_list_scrollvisible .item > *{
+        white-space:normal;
+    }
+
+    .tablet_textvertical_lr{
+        writing-mode:vertical-lr;
+    }
+    .tablet_textvertical_rl{
+        writing-mode:vertical-rl;
+    }
+
+    .tablet_flex_shrink0{
+        flex-shrink:0
+    }
+    .tablet_flex_shrink1{
+        flex-shrink:1
+    }
+    .tablet_flex_shrink2{
+        flex-shrink:2
+    }
+    .tablet_flex_shrink3{
+        flex-shrink:3
+    }
+    .tablet_flex_shrink4{
+        flex-shrink:4
+    }
+    .tablet_flex_shrink5{
+        flex-shrink:5
+    }
+    .tablet_flex_shrink6{
+        flex-shrink:6
+    }
+    .tablet_flex_shrink7{
+        flex-shrink:7
+    }
+    .tablet_flex_shrink8{
+        flex-shrink:8
+    }
+    .tablet_flex_shrink9{
+        flex-shrink:9
+    }
+    .tablet_flex_shrink10{
+        flex-shrink:10
+    }
+    .tablet_flex_grow1{
+        flex-grow:1
+    }
+    .tablet_flex_grow2{
+        flex-grow:2
+    }
+    .tablet_flex_grow3{
+        flex-grow:3
+    }
+    .tablet_flex_grow4{
+        flex-grow:4
+    }
+    .tablet_flex_grow5{
+        flex-grow:5
+    }
+    .tablet_flex_grow6{
+        flex-grow:6
+    }
+    .tablet_flex_grow7{
+        flex-grow:7
+    }
+    .tablet_flex_grow8{
+        flex-grow:8
+    }
+    .tablet_flex_grow9{
+        flex-grow:9
+    }
+    .tablet_flex_grow10{
+        flex-grow:10
+    }
+
+
+    .tablet_flex_horizontal_flexEnd{
+        justify-content:flex-end;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .tablet_flex_horizontal_flexStart{
+        justify-content:flex-start;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .tablet_flex_horizontal_spaceBetween{
+        justify-content:space-between;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .tablet_flex_horizontal_Center{
+        justify-content:center;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .tablet_flex_alignitems_flexStart{
+        align-items:flex-start !important;display:flex;flex-flow:row wrap;align-content:flex-start
+    }
+    .tablet_flex_alignitems_flexEnd{
+        align-items:flex-end !important;display:flex;flex-flow:row wrap;align-content:flex-end
+    }
+    .tablet_flex_alignitems_spaceBetween{
+        align-items:space-between;display:flex;flex-flow:row wrap;align-content:space-between
+    }
+    .tablet_flex_nowrap{
+        flex-flow:row nowrap;
+    }
+    .tablet_flexorder_1{
+        order:1
+    }
+    .tablet_flexorder_2{
+        order:2
+    }
+    .tablet_flexorder_3{
+        order:3
+    }
+    .tablet_flexorder_4{
+        order:4
+    }
+    .tablet_flexorder_5{
+        order:5
+    }
+    .tablet_flexorder_6{
+        order:6
+    }
+    .tablet_flexorder_7{
+        order:7
+    }
+    .tablet_flexorder_8{
+        order:8
+    }
+    .tablet_flexorder_9{
+        order:9
+    }
+    .tablet_flexorder_10{
+        order:10
+    }
+    .tablet_flexorder_11{
+        order:11
+    }
+    .tablet_flexorder_12{
+        order:12
+    }
+    .tablet_flexorder_13{
+        order:13
+    }
+    /*요소 크기 제어 초기화 특정연산 공통적 사용(모바일,모바일태블릿,피시,피시고정)   [[기기별 전역범위사용]]*/
+    .tablet_auto_height{
+        height:auto ;
+    }
+    .tablet_width_auto{
+        width:auto ;
+    }
+    .tablet_height_auto{
+        height:auto ;
+    }
+    .tablet_width_0{
+        width:0 ;
+    }
+    .tablet_height_0{
+        height:0 ;
+    }
+    .tablet_padding_0{
+        padding:0;
+    }
+    .tablet_margin_0{
+        margin:0;
+    }
+    .tablet_border_0{
+        border:0;
+    }
+    .tablet_auto_height_important{
+        height:auto !important;
+    }
+    .tablet_width_auto_important{
+        width:auto !important;;
+    }
+    .tablet_height_auto_important{
+        height:auto !important;
+    }
+    .tablet_width_0_important{
+        width:0 !important;
+    }
+    .tablet_height_0_important{
+        height:0 !important;
+    }
+    .tablet_padding_0_important{
+        padding:0  !important;
+    }
+    .tablet_margin_0_important{
+        margin:0 !important;
+    }
+    .tablet_border_0_important{
+        border:0 !important;
+    }
+
+    .mobile_onlyview{
+        display:none;
+    }
+    .tablet_onlyview{
+        display:block
+    }
+    .pc_onlyview{
+        display:none
+    }
+    .mobile_flexonlyview{
+        display:none;
+    }
+    .tablet_flexonlyview{
+        display:flex
+    }
+    .pc_flexonlyview{
+        display:none
+    }
+
+
+    .tablet_display_block{
+        display:block
+    }
+    .tablet_display_inlineblock{
+        display:inline-block;
+    }
+    .tablet_display_inlineflex{
+        display:inline-flex !important;
+    }
+    .tablet_display_none{
+        display:none;
+    }
+    .tablet_display_flex{
+        display:flex;
+    }
+
+    
+}
+
+@media all and (min-width:1025px){
+    .container{
+        width:100%;height:auto;display:block; max-width:1240px;margin:0 auto;overflow:hidden;position:relative;min-height:100vh
+    }
+        
+    /*transform관련 레이아웃별기기별*/
+    .pc_transform_rotate180deg{
+        transform:rotateZ(180deg);
+    }
+    .pc_transform_rotateminus180deg{
+        transform:rotateZ(-180deg);
+    }
+    .pc_transform_rotate90deg{
+        transform:rotateZ(90deg);
+    }
+    .pc_transform_rotateminus90deg{
+        transform:rotateZ(-90deg);
+    }
+
+     /* 레이아웃 관련 기기별로 다를수있으므로 분기스타일지정가능토록 필요 레이아웃 [[기기별 분기별 공통스타일]]*/
+     .pc_bgcolor_transparent{
+        background-color:transparent
+    }
+     .pc_position_relative_zindex3{
+        position:relative;z-index:3
+    }
+    .pc_position_relative_normal{
+        position:relative;
+    }
+    .pc_position_absolute{
+        position:absolute;
+    }
+    .pc_position_fixed{
+        position:fixed;
+    }
+    .pc_position_relative_normal_important{
+        position:relative !important;
+    }
+    .pc_position_absolute_important{
+        position:absolute !important;
+    }
+    .pc_position_fixed_important{
+        position:fixed !important;
+    }
+    .pc_overflow_auto{
+        overflow-y:auto
+    }
+    .pc_overflow_hidden{
+        overflow:hidden !important;
+    }
+    .pc_overflow_visible{
+        overflow:visible !important
+    }
+
+    .pc_textalignCenter{
+        text-align:center !important;
+    }
+    .pc_textalignLeft{
+        text-align:left !important;
+    }
+    .pc_textalignRight{
+        text-align:right !important;
+    }
+    .pc_textoverflow_prevent_singlerow{
+        overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    }
+    .pc_marginhorizontal_auto{
+        margin:0 auto
+    }
+    .pc_marginvertical_auto{
+        margin:auto 0;
+    }
+
+    .pc_positiontop_0{
+        top:0 ;
+    }
+    .pc_positionbottom_0{
+        bottom:0 ;
+    }
+    .pc_positionright_0{
+        right:0 ;
+    }
+    .pc_positionleft_0{
+        left:0 ;
+    }
+    .pc_positiontop_auto{
+        top:auto ;
+    }
+    .pc_positionbottom_auto{
+        bottom:auto ;
+    }
+    .pc_positionleft_auto{
+        left:auto ;
+    }
+    .pc_positionright_auto{
+        right:auto ;
+    }
+    .pc_positiontop_100percent{
+        top:100% ;
+    }
+    .pc_positionright_100percent{
+        right:100% ;
+    }
+    .pc_positionbottom_100percent{
+        bottom:100%;
+    }
+    .pc_positionleft_100percent{
+        left:100%;
+    }
+    .pc_positiontop_0_important{
+        top:0 !important;
+    }
+    .pc_positionbottom_0_important{
+        bottom:0 !important;
+    }
+    .pc_positionright_0_important{
+        right:0 !important;
+    }
+    .pc_positionleft_0_important{
+        left:0 !important;
+    }
+    .pc_positiontop_auto_important{
+        top:auto !important;
+    }
+    .pc_positionbottom_auto_important{
+        bottom:auto !important;
+    }
+    .pc_positionleft_auto_important{
+        left:auto !important;
+    }
+    .pc_positionright_auto_important{
+        right:auto !important;
+    }
+    .pc_positiontop_100percent_important{
+        top:100% !important;
+    }
+    .pc_positionright_100percent_important{
+        right:100% !important;
+    }
+    .pc_positionbottom_100percent_important{
+        bottom:100% !important;
+    }
+    .pc_positionleft_100percent_important{
+        left:100% !important;
+    }
+    .pc_width_100_percent{
+        width:100% ;
+    }
+    .pc_height_100_percent{
+        height:100% 
+    }
+    .pc_height_100vh{
+        height:100vh;
+    }
+    .pc_width_100_percent_important{
+        width:100% !important;
+    }
+    .pc_height_100_percent_important{
+        height:100% !important
+    }
+    .pc_height_100vh_important{
+        height:100vh !important;
+    }
+
+    .pc_Xoverflow_horizontal_list{
+        display:block;white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+        -webkit-overflow-scrolling:touch
+    }
+    .pc_Xoverflow_horizontal_list::-webkit-scrollbar{
+        display:none;
+    }
+    .pc_Xoverflow_horizontal_list .item{
+        display:inline-block; white-space:normal;
+    }
+    .pc_Xoverflow_horizontal_list .item > *{
+        white-space:normal;
+    }
+    .pc_Xoverflow_horizontal_list_scrollvisible{
+        display:block;white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+        -webkit-overflow-scrolling:touch
+    }
+    .pc_Xoverflow_horizontal_list_scrollvisible .item{
+        display:inline-block; white-space:normal;
+    }
+    .pc_Xoverflow_horizontal_list_scrollvisible .item > *{
+        white-space:normal;
+    }
+    .pc_width_100_percent{
+        width:100% !important;
+    }
+    .pc_height_100_percent{
+        height:100% !important
+    }
+
+    .pc_textvertical_lr{
+        writing-mode:vertical-lr;
+    }
+    .pc_textvertical_rl{
+        writing-mode:vertical-rl;
+    }
+
+    .pc_flex_shrink0{
+        flex-shrink:0
+    }
+    .pc_flex_shrink1{
+        flex-shrink:1
+    }
+    .pc_flex_shrink2{
+        flex-shrink:2
+    }
+    .pct_flex_shrink3{
+        flex-shrink:3
+    }
+    .pc_flex_shrink4{
+        flex-shrink:4
+    }
+    .pc_flex_shrink5{
+        flex-shrink:5
+    }
+    .pc_flex_shrink6{
+        flex-shrink:6
+    }
+    .pc_flex_shrink7{
+        flex-shrink:7
+    }
+    .pc_flex_shrink8{
+        flex-shrink:8
+    }
+    .pc_flex_shrink9{
+        flex-shrink:9
+    }
+    .pc_flex_shrink10{
+        flex-shrink:10
+    }
+    .pc_flex_grow1{
+        flex-grow:1
+    }
+    .pc_flex_grow2{
+        flex-grow:2
+    }
+    .pc_flex_grow3{
+        flex-grow:3
+    }
+    .pc_flex_grow4{
+        flex-grow:4
+    }
+    .pc_flex_grow5{
+        flex-grow:5
+    }
+    .pc_flex_grow6{
+        flex-grow:6
+    }
+    .pc_flex_grow7{
+        flex-grow:7
+    }
+    .pc_flex_grow8{
+        flex-grow:8
+    }
+    .pc_flex_grow9{
+        flex-grow:9
+    }
+    .pc_flex_grow10{
+        flex-grow:10
+    }
+
+
+    .pc_flex_horizontal_flexEnd{
+        justify-content:flex-end;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .pc_flex_horizontal_flexStart{
+        justify-content:flex-start;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .pc_flex_horizontal_spaceBetween{
+        justify-content:space-between;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .pc_flex_horizontal_Center{
+        justify-content:center;display:flex;align-items:center;flex-flow:row wrap;align-content:center
+    }
+    .pc_flex_alignitems_flexStart{
+        align-items:flex-start !important;display:flex;flex-flow:row wrap;align-content:flex-start
+    }
+    .pc_flex_alignitems_flexEnd{
+        align-items:flex-end !important;display:flex;flex-flow:row wrap;align-content:flex-end
+    }
+    .pc_flex_alignitems_spaceBetween{
+        align-items:space-between;display:flex;flex-flow:row wrap;align-content:space-between
+    }
+    .pc_flex_nowrap{
+        flex-flow:row nowrap;
+    }
+    .pc_flexorder_1{
+        order:1
+    }
+    .pc_flexorder_2{
+        order:2
+    }
+    .pc_flexorder_3{
+        order:3
+    }
+    .pc_flexorder_4{
+        order:4
+    }
+    .pc_flexorder_5{
+        order:5
+    }
+    .pc_flexorder_6{
+        order:6
+    }
+    .pc_flexorder_7{
+        order:7
+    }
+    .pc_flexorder_8{
+        order:8
+    }
+    .pc_flexorder_9{
+        order:9
+    }
+    .pc_flexorder_10{
+        order:10
+    }
+    .pc_flexorder_11{
+        order:11
+    }
+    .pc_flexorder_12{
+        order:12
+    }
+    .pc_flexorder_13{
+        order:13
+    }
+
+    /*요소 크기 제어 초기화 특정연산 공통적 사용(모바일,모바일태블릿,피시,피시고정)   [[기기별 전역범위사용]]*/
+    .pc_auto_height{
+        height:auto ;
+    }
+    .pc_width_auto{
+        width:auto ;
+    }
+    .pc_height_auto{
+        height:auto;
+    }
+    .pc_width_0{
+        width:0 ;
+    }
+    .pc_height_0{
+        height:0;
+    }
+    .pc_padding_0{
+        padding:0 ;
+    }
+    .pc_margin_0{
+        margin:0 ;
+    }
+    .pc_border_0{
+        border:0 ;
+    }
+    .pc_auto_height_important{
+        height:auto !important;
+    }
+    .pc_width_auto_important{
+        width:auto !important;;
+    }
+    .pc_height_auto_important{
+        height:auto !important;
+    }
+    .pc_width_0_important{
+        width:0 !important;
+    }
+    .pc_height_0_important{
+        height:0 !important;
+    }
+    .pc_padding_0_important{
+        padding:0  !important;
+    }
+    .pc_margin_0_important{
+        margin:0 !important;
+    }
+    .pc_border_0_important{
+        border:0 !important;
+    }
+
+    .mobile_onlyview{
+        display:none;
+    }
+    .tablet_onlyview{
+        display:none
+    }
+    .pc_onlyview{
+        display:block
+    }
+    .mobile_flexonlyview{
+        display:none;
+    }
+    .tablet_flexonlyview{
+        display:none
+    }
+    .pc_flexonlyview{
+        display:flex
+    }
+
+
+    .pc_display_block{
+        display:block
+    }
+    .pc_display_inlineblock{
+        display:inline-block;
+    }
+    .pc_display_inlineflex{
+        display:inline-flex !important;
+    }
+    .pc_display_none{
+        display:none;
+    }
+    .pc_display_flex{
+        display:flex;
+    }
+    
+}

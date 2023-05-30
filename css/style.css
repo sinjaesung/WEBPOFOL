@@ -1,0 +1,219 @@
+/*font처리*/
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap');
+
+@font-face{
+    font-family:'Syncopate';
+    src: url('../Syncopate/Syncopate-Regular.ttf')
+}
+@font-face{
+    font-family:'Syncopate-Bold';
+    src: url('../Syncopate/Syncopate-Bold.ttf')
+}
+@font-face{
+   font-family:'sofiapro';
+   src: url('../fonts/sofiapro-light.otf') format('opentype');
+   font-weight:normal;
+   font-style:normal
+}
+@font-face{
+    font-family:'cooperblackstd';
+    src:url('../fonts/CooperBlackStd.otf') format('opentype');
+    font-weight:normal;
+   font-style:normal
+}
+/*폰트스타일 기타스타일 공통  [[기기별 전역범위사용]]*/
+.fontfamily_syncopate{
+    font-family:'Syncopate'
+}
+.fontfamily_syncopatebold{
+    font-family:'Syncopate-Bold'
+}
+.fontfamily_sofiapro{
+    font-family:'sofiapro'
+}
+.fontfamily_cooperblackstd{
+    font-family:'cooperblackstd'
+}
+
+
+/*swiper pagination common style project per local stylesss*/
+.swiper-pagination .swiper-pagination-bullet{
+    background-color:#858585;
+}
+.swiper-pagination .swiper-pagination-bullet-active{
+    background-color:#fe5040
+}
+.swiper-pagination-styleBar1 .swiper-pagination-bullet{
+    background-color:#c9d7e2;  width:40px !important; height:6px !important;
+    margin:0 5px !important;border-radius:0 !important;
+}
+.swiper-pagination-styleBar1 .swiper-pagination-bullet-active{
+    background-color:#40a7a0; width:40px !important; height:6px !important;
+    margin:0 5px !important;border-radius:0 !important;
+}
+
+.swiper-pagination1.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background:#303031 !important
+}
+.swiper-pagination1.swiper-pagination-progressbar{
+    background:#ccc !important;
+}
+.swiper-button-prev{
+    background-image:url('../img/mobile/naviArrow2.png') !important;background-position:center !important;
+    background-size:cover !important;
+}
+.swiper-button-next{
+    background-image:url('../img/mobile/naviArrow1.png') !important;background-position:center !important;
+    background-size:cover !important;
+}
+
+
+.swiper-pagination2.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background:white !important
+}
+.swiper-pagination2.swiper-pagination-progressbar{
+    background:#e7cfbe !important;
+}
+
+.swiper-pagination3.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background:#2e2e2e !important
+}
+.swiper-pagination3.swiper-pagination-progressbar{
+    background:#cacaca !important;
+}
+.swiper-pagination4.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background:#2e2e2e !important
+}
+.swiper-pagination4.swiper-pagination-progressbar{
+    background:#cacaca !important;
+}
+.swiper-pagination5.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background:#2e2e2e !important
+}
+.swiper-pagination5.swiper-pagination-progressbar{
+    background:#cacaca !important;
+}
+
+
+.popupbg{
+    background-color:rgba(0,0,0,0.7); position:fixed; z-index:600; 
+     left:0;top:0; width:100%;height:100vh;
+}
+.darkblur{
+    position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.3)
+}
+/*스크롤바 설정*/
+/*.main_localScrollwrapper::-webkit-scrollbar{
+    width:10px;
+}
+.main_localScrollwrapper::-webkit-scrollbar-thumb{
+    height: 30%;
+    background:#404040;
+    border-radius:10px;
+}
+.main_localScrollwrapper::-webkit-scrollbar-track{
+    background:rgba(10,10,10,.1);
+}
+nav::-webkit-scrollbar{
+    width:10px;
+}
+nav::-webkit-scrollbar-thumb{
+    height: 30%;
+    background:#404040;
+    border-radius:10px;
+}
+nav::-webkit-scrollbar-track{
+    background:rgba(10,10,10,.1);
+}*/
+.solution_category .nowrap_horizontalList::-webkit-scrollbar{
+    width:3px;
+}
+.solution_category .nowrap_horizontalList::-webkit-scrollbar-thumb{
+    height: 30%;
+    background:#404040;
+    border-radius:10px;
+}
+.solution_category .nowrap_horizontalList::-webkit-scrollbar-track{
+    background:rgba(10,10,10,.1);
+}
+/*css레벨 애니메이팅,트랜지션,스타일링 효과*/
+*[class*=CSSHOVER]{
+    cursor:pointer
+}
+
+.CSSHOVER_style1:hover{
+    color:#8020ef;text-decoration:underline;
+}
+.CSSHOVER_boxstyle1:hover{
+    background-color:#7020ef;border-color:#7020ef;color:white
+}
+.CSSHOVER_boxstyle2:hover{
+    background-color:#505050;border-color:#505050;color:white
+}
+
+.CSSHOVER_style2:hover{
+    color:#a5a0ef;text-decoration:underline;
+}
+
+
+.CSSHOVER_MENU_style1:hover .txt{
+    color:rgb(255, 115, 96);
+}
+.CSSHOVER_MENU_style1:hover .activeball{
+    background-color:rgb(255, 115, 96);box-shadow:0 0 10px 5px rgb(255, 115, 96);
+}
+@media all and (max-width:640px){
+    .PageGuide{
+        position:fixed;right:0;bottom:0%;padding:2%;width:60%;background-color:rgba(0,0,0,0.8); color:white;z-index:950
+    }
+}
+@media all and (min-width:641px) and (max-width:1024px){
+    .PageGuide{
+        position:fixed;right:0;bottom:0%;padding:2%;width:40%;background-color:rgba(0,0,0,0.8); color:white;z-index:950
+    }
+}
+@media all and (min-width:1025px){
+    .PageGuide{
+        position:fixed;right:0;bottom:0%;padding:2%;width:20%;background-color:rgba(0,0,0,0.8); color:white;z-index:950
+    }
+}
+
+@media all and (orientation:portrait) and (min-width:1024px) and (max-aspect-ratio:8/8) {
+    /*right:-4%;top:10%^
+    769~1024|1024*1080$width:430responmin;height:430responmin;right:1%;bottom:47%^*/
+    .CSSMEDIAQUERY_snsCenterDeco{
+        right:1% !important;bottom:47% !important;top:auto !important;
+    }
+}
+@media all and (orientation:portrait) and (min-width:1024px) and (max-aspect-ratio:8/10){
+    .CSSMEDIAQUERY_snsCenterDeco{
+        right:1% !important;top:10% !important;bottom:auto !important;
+    }
+}
+@media all and (orientation:landscape) and (min-width:1024px) and (max-aspect-ratio:15/10){
+    .CSSMEDIAQUERY_snsCenterDeco{
+        right:24% !important;top:18% !important;bottom:auto !important;
+    }
+}
+@media all and (orientation:landscape) and (min-width:1024px) and (max-aspect-ratio:12/10){
+    .CSSMEDIAQUERY_snsCenterDeco{
+        right:9% !important;top:12% !important;bottom:auto !important;
+    }
+}
+
+@media all and (orientation:landscape) and (max-width:1024px) and (min-aspect-ratio:8/8){
+    .CSSMEDIAQUERY_snsCenterDeco{
+        right:20% !important;top:9% !important;
+    }
+}
+
+
+@media all and (min-width:541px) and (max-width:1200px){
+   
+}
+
+@media all and (min-width:1201px){
+    
+}

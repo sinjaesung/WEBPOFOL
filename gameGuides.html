@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en"OriginId='HTMLROOT' targetindex="javascript_scrollContaineronly">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,minimum-scale=1">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://fonts.googleapis.com/icons" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!--<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>-->
+    
+</head>
+<audio src="img/mainMusic.mp3" autoplay loop></audio>
+<body class="position_relative_normal">
+<div class="PageGuide">
+    <p>모든 모델 상세보기형 페이지(링크클릭시)에서의 3D MODEL을 보실때 마우스드래그드롭,Shift키 조합등으로 3d공간상의 시점변환,transform,카메라방향전환등 가능합니다. 마우스휠로 확대/축소. 이점 이용시 참고바랍니다.</p>
+</div>   
+<div id="pageLoader">
+    <img src="img/Circle-Loading.svg"/>
+</div> 
+<!--fontfamily_Montserrat_Bold-->
+<!--<div id="javascript_scrollContainer" class="main_localScrollwrapper"targetindex="javascript_scrollContaineronly">-->
+<div id='javascript_contentContainer'>
+    <header class='javascript_Css_define position_fixed'javascript_Css_define="
+    0~640|640*1100$width:590response;left:0;right:0;margin:0 auto;top:0;z-index:989^
+    641~960|960*1100$width:824response;left:0;right:0;margin:0 auto;top:0;z-index:989^
+    961~1400|1400*1100$width:1262response;left:0;right:0;margin:0 auto;top:0;z-index:989^
+    1401~1920|1920*1080$width:1642response;left:0;right:0;margin:0 auto;top:0;z-index:989^
+    1921~9999|1920*1080$width:1642response;left:0;right:0;margin:0 auto;top:0;z-index:989">
+        <div class="inner javascript_Css_define position_relative_normal"javascript_Css_define="
+        0~640|640*1100$margin-top:52responmin;padding-bottom:60responmin;display:flex;flex-flow:row nowrap;justify-content:space-between^
+        641~960|960*1100$margin-top:42responmin;padding-bottom:60responmin;display:flex;flex-flow:row nowrap;justify-content:space-between^
+        961~1400|1400*1100$margin-top:38responmin;padding-bottom:60responmin;display:flex;flex-flow:row nowrap;justify-content:space-between^
+        1401~1920|1920*1080$margin-top:38responmin;padding-bottom:80responmin;display:flex;flex-flow:row nowrap;justify-content:space-between^
+        1921~9999|1920*1080$margin-top:38responmin;padding-bottom:80responmin;display:flex;flex-flow:row nowrap;justify-content:space-between">
+            <span class="headerlogo javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$width:70px;height:28px;display:block^
+            641~960|960*1100$width:90px;height:36px;display:block^
+            961~1400|1400*1100$width:150px;height:60px;display:block^
+            1401~1920|1920*1080$width:150px;height:60px;display:block^
+            1921~9999|1920*1080$width:150responmin;height:60responmin;display:block">
+                <img src="img/sinjaLogo.svg"/>
+            </span>
+            <div class="navimenubar javascript_Css_define cursorpointer javascript_StyleEffectTrigger2 javascript_StyleEffectTrigger2_naviOpen"javascript_Css_define="
+            0~9999|960*1100$position:absolute;right:0;top:0">
+                <span class="bar javascript_Css_define" javascript_Css_define="
+                0~1920|960*1100$width:24px;height:4px;margin-bottom:4responmax;background-color:#707070;display:block^
+                1921~9999|1920*1080$width:24responmin;height:4responmin;margin-bottom:4responmax;background-color:#707070;display:block">
+                </span>
+                <span class="bar javascript_Css_define" javascript_Css_define="
+                0~1920|960*1100$width:24px;height:4px;margin-bottom:4responmax;background-color:#707070;display:block^
+                1921~9999|1920*1080$width:24responmin;height:4responmin;margin-bottom:4responmax;background-color:#707070;display:block">
+                </span>
+                <span class="bar javascript_Css_define" javascript_Css_define="
+                0~1920|960*1100$width:24px;height:4px;background-color:#707070;display:block^
+                1921~9999|1920*1080$width:24responmin;height:4responmin;background-color:#707070;display:block">
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <div class="naviBg javascript_Css_define position_fixed"targetindex='navBg'javascript_Css_define="
+    0~9999|1920*1080$display:none;left:0;top:0;width:100%;height:100%;background-color:rgba(255,255,255,0.5);z-index:500"style='display:none'></div>
+    <nav class="javascript_Css_define position_fixed" javascript_Css_define="
+    0~640|640*1100$width:90%;height:100vh;right:0;top:0;background-color:rgba(255,255,255,0.94);padding-top:144responmax;right:0;top:0;z-index:998;right:-200%;display:none^
+    641~1920|1920*1080$width:420px;height:100vh;right:0;top:0;background-color:rgba(255,255,255,0.94);padding-top:224responmin;right:0;top:0;z-index:998;right:-200%;display:none^
+    1921~9999|1920*1080$width:420responmin;height:100vh;right:0;top:0;background-color:rgba(255,255,255,0.94);padding-top:224responmin;right:0;top:0;z-index:998;right:-200%;display:none"targetindex='naviOpenTarget,naviCloseTarget'>
+        <a href='index.html'> <span class="navilogo javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$width:70px;height:28px;display:block;margin-bottom:2rem;margin-left:3%^
+            641~960|960*1100$width:90px;height:36px;display:block;margin-bottom:2rem;margin-left:3%^
+            961~1400|1400*1100$width:150px;height:60px;display:block;margin-bottom:2rem;margin-left:3%^
+            1401~1920|1920*1080$width:150px;height:60px;display:block;margin-bottom:2rem;margin-left:3%^
+            1921~9999|1920*1080$width:150responmin;height:60responmin;display:block;margin-bottom:2rem;margin-left:3%">
+                <img src="img/sinjaLogo.svg"/>
+            </span></a>
+        <img src="img/closeblack.png"class="display_block javascript_Css_define cursorpointer javascript_StyleEffectTrigger2 javascript_StyleEffectTrigger2_naviClose"javascript_Css_define="
+        0~640|640*1100$width:22px;height:22px;right:62responmax;top:34responmax;position:absolute^
+        641~1920|960*1100$width:22px;height:22px;right:62px;top:34px;position:absolute^
+        1921~9999|1920*1080$width:22responmin;height:22responmin;right:62responmin;top:34responmin;position:absolute"/>
+
+        <ul class="menuList ">
+            <li class="CSSHOVER_MENU_style1 Montserrat_Medium menuitem javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:144response^
+            641~1920|960*1100$display:flex;align-items:center;font-size:24px;color:#606060;padding-bottom:24responmax;padding-left:94px^
+            1921~9999|1920*1080$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:94responmin">
+                <span class="activeball javascript_Css_define"javascript_Css_define="
+                0~640|1400*1100$display:block;width:18responmax;height:18responmax;margin-right:6responmin;background-color:#606060;border-radius:50%^
+                641~1920|1920*1080$display:block;width:18px;height:18px;margin-right:8responmin;background-color:#606060;border-radius:50%^
+                1921~9999|1920*1080$display:block;width:18responmin;height:18responmin;margin-right:8responmin;background-color:#606060;border-radius:50%">
+                </span>
+                <span class="txt">
+                    <a href='mindSet.html'>MINDSET</a>
+                </span>
+            </li>
+            <li class="CSSHOVER_MENU_style1 Montserrat_Medium menuitem javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:144response^
+            641~1920|960*1100$display:flex;align-items:center;font-size:24px;color:#606060;padding-bottom:24responmax;padding-left:94px^
+            1921~9999|1920*1080$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:94responmin">
+                <span class="activeball javascript_Css_define"javascript_Css_define="
+                0~640|1400*1100$display:block;width:18responmax;height:18responmax;margin-right:6responmin;background-color:#606060;border-radius:50%^
+                641~1920|1920*1080$display:block;width:18px;height:18px;margin-right:8responmin;background-color:#606060;border-radius:50%^
+                1921~9999|1920*1080$display:block;width:18responmin;height:18responmin;margin-right:8responmin;background-color:#606060;border-radius:50%">
+                </span>
+                <span class="txt">
+                    <a href='EvilHumans.html'>EVILHUMANS</a>
+                </span>
+            </li>
+            <li class="CSSHOVER_MENU_style1 Montserrat_Medium menuitem javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:144response^
+            641~1920|960*1100$display:flex;align-items:center;font-size:24px;color:#606060;padding-bottom:24responmax;padding-left:94px^
+            1921~9999|1920*1080$display:flex;align-items:center;font-size:24responmin;color:#606060;padding-bottom:24responmax;padding-left:94responmin">
+                <span class="activeball javascript_Css_define"javascript_Css_define="
+                0~640|1400*1100$display:block;width:18responmax;height:18responmax;margin-right:6responmin;background-color:#606060;border-radius:50%^
+                641~1920|1920*1080$display:block;width:18px;height:18px;margin-right:8responmin;background-color:#606060;border-radius:50%^
+                1921~9999|1920*1080$display:block;width:18responmin;height:18responmin;margin-right:8responmin;background-color:#606060;border-radius:50%">
+                </span>
+                <span class="txt">
+                    <a href='gameGuides.html'>GALLERY&gameGuides</a>
+                </span>
+            </li>
+        </ul>
+    </nav>
+   
+    <section class="section2 guideimg javascript_Css_define  overflow_hidden "
+    >
+        <div class="contentWrap  javascript_Css_define"style='z-index:9'javascript_Css_define="
+        0~640|640*1100$padding-bottom:290responmax;opacity:0.96^
+        641~1024|1024*1100$padding-bottom:203responmax;opacity:0.96^
+        1025~1920|1920*1080$padding-bottom:310responmin;opacity:0.96^
+        1921~9999|1920*1080$padding-bottom:310responmin;opacity:0.96">
+            <div class="sectionMessage">
+                <h2 class="sectionTit javascript_Css_define fontfamily_Montserrat_Bold"javascript_Css_define="
+                0~640|640*1100$padding-left:22response;padding-top:26responh;font-size:35responmin;padding-bottom:30responh;color:#202020^
+                641~1024|1024*1100$padding-left:53response;padding-top:95responh;font-size:60responmax;padding-bottom:30responh;color:#202020^
+                1025~1920|1920*1080$padding-left:116response;padding-top:201responh;font-size:103responmin;padding-bottom:57responh;color:#202020^
+                1921~9999|1920*1080$padding-left:116response;padding-top:201responh;font-size:103responmin;padding-bottom:57responmin;color:#202020">
+                GUIDES
+                </h2>
+            </div>
+            
+            <div class="mediaList javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$padding-left:22response;padding-right:35response;display:block^
+            641~1024|1024*1100$padding-left:58response;padding-right:76response;display:flex;flex-flow:row wrap^
+            1025~1400|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap^
+            1401~1920|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap^
+            1921~9999|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap">
+           
+                <div class=' mediaItem javascript_Css_define 'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="guides/ONlyPcAndLaptops.PNG"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    해당 게임은 pc&Laptop용(마우스,키보드 존재기기)의 해상도폭 1400px이상의 기기에서 이용하는것 권장드리며, 현재까진 모바일&태블릿의 터치인터페이스는 지원하지 않습니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define  position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="guides/BaseGroundBorderOut.PNG"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fffg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    캐릭터가 죽거나 맵의 기본 그라운드 범위를 벗어나는 경우(추락) 해당 맵의 처음부터 다시 시작됩니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responhg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response">
+                        <img src="guides/F_Effect_alotOfRenderer.PNG"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    'F'스킬의 경우 화면 기준 마우스커서가 위치한 곳으로 레이저가 발사되며,키를 누르고있는동안에 계속 연속발사되는 기술입니다. 컴퓨터성능에 따라 보편적으로 레이저이펙트가 누적되는 정도가 길어질수록 렌더링성능하락 FrameDrop이 생길 가능성이 있고,브라우저 WEBGPU OR WEBGL renderer가 잠시 다운될수도 있으니 이점 참고바랍니다.(너무 오래 한 지점으로 F로 이펙트파티클이 누적되는경우) 또한 f스킬은 원거리적에게 유용한데, f스킬은 일정최대치에 한해서 적의 속도,원거리이동량을 감소시켜서 적을 나에게 가까이 끌어오는 효과도 갖고있습니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responhg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response">
+                        <img src="guides/CharacterWeaponUse.PNG"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    'T'스킬의 경우 사진과 같이 캐릭터 위에 존재하는 무기로 'T'키를 누르고있는동안에만 활성화되며 누르고있는동안 무기가 전방으로 회전하면서 적들을 공격가능합니다. 무기를 사용할수있는 캐릭터들은 우측조작ui상에 무기아이콘이 표시되며, 무기스킬의 경우 물량전보다는 보스전에서 유용할수있습니다. 팁을 하나 드리자면 무기자체의 순수화력의 강함은 푸키>로이드>카이>윈디>핑키 이며, 푸키의 경우 무기를 잘만 사용하면 보스전에서 엄청난 화력을 발휘가능합니다. 또한 무기를 이용한 전투에서 적들이 많은 맵에선 초반에 몬스터에셋이 많을때 다소 렉이 걸려서 무기스킬사용시 무기회전속도가 느려서 데미지가 제대로 들어가지 않을수있는데, 이런경우 적절히 레이저스킬,폭발스킬과 같이 사용하면서 몬스터수를 줄여나가면서 렉이 줄었을때 무기스킬을 사용하면 빠른회전으로 공격가능합니다. 또한 무기스킬로 무리하게 전투기공중유닛을 잡으려고 시도하지마세요.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame0"response_properties='transform'>
+                        <img src="guides/ScreenCameraControls.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget0'response_properties='transform'>
+                    마우스휠을 통해 화면 확대,축소 가능하며, 마우스 드래드드롭을 통해 화면의 회전,시점전환(카메라) 등 조작이 가능합니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame1"response_properties='transform'>
+                        <img src="guides/RestSkillDances.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget1'response_properties='transform'>
+                    'R'스킬의 경우 사용시 댄스모드,일반모드로 토글링 가능하며, 댄스모드인 경우에 손상당한 캐릭터 HP를 계속 회복가능합니다. 
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame2"response_properties='transform'>
+                        <img src="guides/ExplosionParticleDamageGuide.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget2'response_properties='transform'>
+                    'Q'스킬의 경우 폭발형 스킬로 폭발파티클이 유지될 동안에는 계속 적들에게 피해를 주는 지속데미지 형태 스킬입니다. F스킬은 스킬이 발동되고있을동안에만 데미지가 가해지는 방식이고,Q스킬은 스킬발동이후에도 파티클입자들이 존재하고있는동안엔 계속 데미지가 가해지는 스킬입니다. 해당 특성을 전투에 이용해보세요. 폭발형 스킬이 발달한 캐릭터, F스킬이 발달한 캐릭터가 있습니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame3"response_properties='transform'>
+                        <img src="guides/ShamonGSkill.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget3'response_properties='transform'>
+                    'G'스킬의 경우 캐릭터의 잠재적인 정신에너지를 폭발시켜 육체적,정신적 각성하는 설정의 스킬이며 내면의 샤먼을 부르는 스킬로, 활성화상태 동안엔 캐릭터 샤먼이 캐릭터 주위를 따라다니며, 이 상태에선 캐릭터의 모든 스킬의 파워가 3배 증가된 상태가되며, 샤먼 또한 자체적 마찰충돌 데미지가 있어 몬스터가 샤먼에 마찰시 몬스터들에게 지속 피해가해집니다. G키로 스킬을 해제,활성 토글링가능합니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame4"response_properties='transform'>
+                        <img src="guides/accelratorRunJump.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget4'response_properties='transform'>
+                    'w,s,a,d'방향키와 Shift같이 누를시 달리기 가능하며,w,s,a,d+spacebar같이 누를시 해당 방향 점프가능합니다. 달리던 상태에서 달리던방향으로(w,a,s,d+shift누르고있던상태에서) 점프시에 가속 수평 이동 가능합니다. 우측 인터페이스처럼 w,s,a,d키만 각각 누르면 해당방향으로 걷기진행합니다. wa,wd조합 sa,sd조합으로 누르면 각각 전방좌측대각선방향,전방우측대각선방향  후방좌측,후방우측 대각선방향으로 캐릭터가 걷기,달리기 이동가능합니다. 마우스휠로 화면 확대축소 가능하며, 마우스드래그드롭등으로 카메라시점뷰 전환등 가능합니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame5"response_properties='transform'>
+                        <img src="guides/MonsterSkillFightManys.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget5'response_properties='transform'>
+                    스킬에 따라서 스킬을 대량으로 많이 사용시, 적이 매우 많고, 적들과의 대량 전투난전이 많이 발생하고있는 경우 렌더링렉과 앞서 언급드린 WEBGL renderer frameDown 프리징 현상이 생길수도있으니 이점 유의바랍니다. 이걸 예방하려면 컴퓨터가 좋거나 아니면 너무 과도한 이펙트가 발생하는 상황이 되지않게끔 전투가 이뤄지게끔 신경쓰면 됩니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame6"response_properties='transform'>
+                        <img src="guides/BuildingCollapses.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget6'response_properties='transform'>
+                    건물에 스킬사용시 무너지는 연출이 발생하는 건물들이 있을텐데 해당 건물의 경우 적군 건물인겁니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame7"response_properties='transform'>
+                        <img src="guides/GameStartMap.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget7'response_properties='transform'>
+                    게임시작시 첫 로드되는 맵은 혁명연합군과,마인드셋(player)가 EvilHumans로부터 탈환한 기존 통제도시이며, 현재는 두 연합그룹의 거점으로 등록된 지역입니다. 해당 맵의 사람들과,자동차,건물등은 연합군,중립인류,마인드셋연합의 관련 구조물들입니다. 해당맵의 사람들과,자동차에 스킬을 사용하지 마세요. 스킬을 사용하면 asset이 줄어들어 게임속도는 향상되겠지만 아군이 죽는것과 같습니다. 맵상에 사람들과 같이 있는 몬스터프렌즈는 현재는 관상용으로만 존재하는 마인드셋의 인조인간프로토타입인데(희미한 인간의식존재) 추후에 개량을 거쳐서 전투형으로 개조될예정입니다. 그들을 외형만 보고 공격하지마세요.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame8"response_properties='transform'>
+                        <img src="guides/OpenWorldNight.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget8'response_properties='transform'>
+                    해당 맵은 중립분쟁지역으로 절반은 mindset+혁명군 / 나머지 절반은 EvilHumans가 점거하고있는 지역입니다. 
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame9"response_properties='transform'>
+                        <img src="guides/PortalGuides.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget9'response_properties='transform'>
+                    맵을 돌아다니다 보면 관문같이 생긴 벽or큐브모양의 오브젝트가 있는데, 해당 오브젝트에 마찰시에 맵간 이동가능합니다
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame10"response_properties='transform'>
+                        <img src="guides/GameMouseOutMultipleError.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget10'response_properties='transform'>
+                    브라우저상에서 게임플레이하다가 게임에서 캐릭터 이동중에(점프나 걷기 달리기)에 다른 용무로 마우스커서가 게임화면 벗어나 다른프로그램에 들렀다가 다시 게임으로 와서 캐릭터 조작하려고 이동시에 캐릭터가 멋대로 움직이는 이슈가 생길수도있는데, 이 경우 'R'스킬을 사용하면 해당 현상Reset 가능하니 이 점 이용시 참고바랍니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame11"response_properties='transform'>
+                        <img src="guides/EvilControlTower.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget11'response_properties='transform'>
+                    해당맵은 정식명칭 'EvilControlTower'로 EvilHumans그룹의 최초설립자가 관련자들과 2028년경 최초 회의를 거쳐 해당 단체를 설립하기 시작한 장소로 현재는 모든것들을 통제하는 통제타워1 역할을 담당하는 지역입니다. 주로 인적자원,무기,인적통제등을 담당하는 지역입니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame12"response_properties='transform'>
+                        <img src="guides/EvilCoreArea.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget12'response_properties='transform'>
+                    해당맵은 정식명칭 'EvilCoreArea'로 EvilHumans그룹의 모든 지적통제가 이뤄지는 회의소 공간으로써 거대한 실내돔형태의 공간지역입니다. 해당 맵에 고위관리인과 그들을 보좌하는 근접형태의 전사들이 다량 배치되어있습니다. 해당 맵엔 파괴오브젝트건물들등 오브젝트가 많아 맵 최초 로드시에 렌더렉이 걸릴수있는데, 오브젝트들이 줄여져 나갈수록 렉은 없어지니 이점 참고바랍니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame13"response_properties='transform'>
+                        <img src="guides/EvilCityMap.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget13'response_properties='transform'>
+                    해당맵은 정식명칭 'EvilCity'로 EvilHumans그룹을 하나의 국가로써 성장유지될수있도록 하는 모든 내적 자원들이 집중되어있는 경제,기술 거대지역단지입니다. 해당 맵엔 직접적으로 강력한 적들은 없습니다. 해당 맵 내의 모든 건물들과 외경 구조에서 모든 경제적,기술연구,흐름이 발생하고있습니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame14"response_properties='transform'>
+                        <img src="guides/evilFactoryMap.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget14'response_properties='transform'>
+                    해당맵은 정식명칭 'EvilFactory'로 EvilHumans그룹의 모든 무기자원,기술력이 집중되어있는 공간으로 사막형태의 넓은 광할지이고 해당 맵에서 주로 기갑 육상훈련 기갑전투부대 육성,기갑전투무기생산,각종 기계로봇형태의 구조물의 생산,제조등을 담당하는 거대야외공장단지 입니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame15"response_properties='transform'>
+                        <img src="guides/EnemyStartMap.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget15'response_properties='transform'>
+                    해당맵은 정식명칭 'EnemyStarts'로 EvilHumans그룹의 관문같은 지역이며,mindSet&혁명군,인접 적선중립국가와의 경계선에 있는 현재는 EvilHumans그룹이 천연자원확보를 위해 거대 자연정글지역이 있는 지역으로 해당 맵엔 다양한 석유와,식량등의 원초적 자원이 많이 존재합니다.거대한 밀림정글 지역입니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame16"response_properties='transform'>
+                        <img src="guides/AirJumpMove.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget16'response_properties='transform'>
+                    높은 위치에서 점프낙하중에 공중에 있는 상태에서 이동키활성시에 공중에서 나는 형태의 flying모드 가능합니다. 해당 상태에선 천천히 이동되며, 중력에 영향을 받지 않는듯이 천천히 이륙가능합니다.이동키를 뗴면 다시 중력에 영향을 크게 받아 지면에 빨리 착지하게됩니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame17"response_properties='transform'>
+                        <img src="guides/planeGroundMap.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget17'response_properties='transform'>
+                    해당맵은 정식명칭 'planeGround'으로 원래는 평화로운 자연그대로의 거대한 초원Garden지역이었으나 현재는 EvilHumans에 의해서 조경단지로써 개발되고관리되고있는 지역으로써 EvilhUmans도 이곳의 자연환경은 마음에 들었는지 냅두고, 이곳에 풍부하게 있는 천역 곡물과,밀,거대식량,광물단지로써 사용하고있고, 통제관리를 위해 노동력,로봇,전투방어 병력등을 배치해두었습니다. 이곳은 모든 지역중 가장 오염이 적게된 지역이기도 합니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame18"response_properties='transform'>
+                        <img src="guides/WithFriends.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget18'response_properties='transform'>
+                    UserInterface중에서 'Y'키가 존재하는 맵에선 mindSet멤버들을 불러들일수 있는 기능이 있으며, 이 기능자체에 별다른 효과는 없고 그저 동료들을 같이 불러모으는 기능일 뿐이며, 해당 상태에서 'R' 키 누르면 동료들도 같이 춤을 춥니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame19"response_properties='transform'>
+                        <img src="guides/industryMap.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget19'response_properties='transform'>
+                    해당맵은 'evilIndustry'로 EvilHumans의 모든 기계,철강기반의 로봇,무기,군수물자,광물 등을 사막Factory지역과 유사하게 생산&제련 하는 거대 실내 공업단지지역으로 역사가 오래된 지역이기도 합니다. 이지역은 2009년경부터 세계의 유명한 거대조선단지를 개량하여 실내의 거대공간으로 개조한 지역으로 모든 지역중 가장 오래된 역사를 자랑합니다.해당 지역은 AI머신센터와 가장 인접한 지역이기도 하며 factory단지와 함께 군수문자,기계,철광광물 등의 생산유지보수관리와, ai머신센터와의 자원교류 기지방어,정찰, 로봇관리등의 중요지역중 하나입니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame20"response_properties='transform'>
+                        <img src="guides/AiMahcineControlTower.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget20'response_properties='transform'>
+                    해당맵은 'CentralControlTower or aiMachineTower'로 EvilHumans의 보다 전문적인 미래지향적 첨단기술의 집합체인 공간으로 AI machineCenter로 AI기술연구 및 양자막컴퓨터 Kernel의 관리 및 유지보수,생산관리,AI&로봇 유통생산단지이며 해당 맵의 상공상에 있는 구름과 대기중에 있는 이산화탄소 등을 에너지원으로 하여 톱니바퀴가 그 에너지를 전력으로 변환시켜 양자컴퓨터를 가동시켜 로봇들과 컴퓨터전력,양자장 생성등의 작용이 이뤄지는 공간입니다. 해당맵의 최상층 공간에는 양자막컴퓨터가 존재하며 이것이 EvilHumans가 현재도 계속 연구 및 유지보수중인 최첨단AI기술의 집합체이며 이것이 각종 AI형태의 머신과 로봇들의 어머니같은 동력원입니다. 적의 심장,뇌와 같다고도 할수있습니다. 물론 실질적인 수뇌부의 설립자와 임원관리자들은 더 상위의 아직 밝혀지지 않은 공간에서 계속 제국의 문맥을 이루고있으며 그들이 진정한 EvilHumans의 뇌이자 정신 동력원입니다. 그들을 찾아내어 뭔가를 해야 이 전쟁은 끝납니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame21"response_properties='transform'>
+                        <img src="guides/CentralQuantuamComputer.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget21'response_properties='transform'>
+                    CenteralTower지역에서 사진의 포탈같은 곳을 거치면 최종적으로 가장 게임시작맵인 Opencity로 도달할수있는데 Opencity는 현재 mindSet과,중립&혁명군의 통제구역입니다만, EvilHumans는 이곳또한 중요지역으로써 점찍어 두고 있는지 몰래 높은 상공상에 그들의 상공전초기지를 구축해두었으며, 이젠 점차 크기를 늘리더니 대놓고 그곳에 부술수없는 플라즈마방어막 기술형태의 공간구축을 해두고 감시위성카메라와 전투기등을 배치시켜두며 시시탐탐 Opencity지역과 인간들을 노리고 감시하고있습니다. CentralTower의 양자막컴퓨터는 눈에 보이지않는 플라즈마양자쉴드로 방어되고있어 물리적폭발은 불가하며, 플라즈마양자막을 직접 해제할수있는 좀더 고차원의 에너지작용이 필요하며, 이를 해제하기위해 '미미'의 물질 이계차원분해 능력이 언급되었으나 이 능력또한 저계의 다른 저차원의 블랙홀에너지여서 플라즈마와는 상호작용이 일어나지 않아 효과는 없다는 결론이 나왔습니다. 양자막 컴퓨터의 플라즈마실드를 없애기위해선 더 진보된 문명의 고차원적 에너지상호작용이 필요해보입니다. 이 기술은 어떠한 국가나 집단도 현재 지구내에선 갖고있지 않는것으로 보입니다. EvilHumans또한 이 플라즈마 기술을 이론적으로 이용만 하고 있을뿐 이것이 무슨 연역적 원리로 다른물질과 어떻게 작용하는지는 모릅니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%;perspective:4000px;perspective-origin:center^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%;perspective:4000px;perspective-origin:center">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame22"response_properties='transform'>
+                        <img src="guides/opencityAirConsturcture.PNG"class="display_block javascript_Css_define" javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget22'response_properties='transform'>
+                    사진과 같이 opencity상공에 구조물이 보이는데 이건 현재 기술로 부술수없는 플라즈마방어막으로 방어되고있어 현세계의 낮은 진동수의 물질과(불,번개,다른 여러 원소계물질) 상호작용하지 않아 부술수없는실정이고, 상공의 카메라를 통해 실시간 감시당하고 있는 실정입니다.카메라또한 쉴드로 둘러쌓여 있습니다.
+                    </p>
+                </div>
+                <div class=' mediaItem javascript_Css_define javascript_scroll_response javascript_scroll_response_group1'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal   javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response;opacity:0;transform:skewX=70deg@rotateY=45deg" targetindex="scroll_response_group1_imgFrame23"response_properties='transform'>
+                        <img src="guides/MindsetFrontMap.PNG"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div>
+                    <p class="javascript_Css_define javascript_inlinestyle_responsive_elements"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff;opacity:0;transform:skewX=70deg@rotateY=45deg"targetindex='scroll_response_group1_ptxtTarget23'response_properties='transform'>
+                    해당맵은 마인드셋그룹의 전초기지같은 맵이며, 마인드셋직원들과 마인드셋 인조인간들 관련자들이 모여서 회의나 미팅 등의 커뮤니케이션을 하는 관련작전 장소입니다. 해당맵엔 적은 없습니다. 해당 맵 건물최상층돔 안에는 몬스터프렌즈가 있습니다.그들을 죽이거나 괴롭히지 마세요.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section3 GalleryList javascript_Css_define  overflow_hidden "
+    >
+        <div class="contentWrap  javascript_Css_define"style='z-index:9'javascript_Css_define="
+        0~640|640*1100$padding-bottom:290responmax;opacity:0.96^
+        641~1024|1024*1100$padding-bottom:203responmax;opacity:0.96^
+        1025~1920|1920*1080$padding-bottom:310responmin;opacity:0.96^
+        1921~9999|1920*1080$padding-bottom:310responmin;opacity:0.96">
+            <div class="sectionMessage">
+                <h2 class="sectionTit javascript_Css_define fontfamily_Montserrat_Bold"javascript_Css_define="
+                0~640|640*1100$padding-left:22response;padding-top:26responh;font-size:35responmin;padding-bottom:30responh;color:#202020^
+                641~1024|1024*1100$padding-left:53response;padding-top:95responh;font-size:60responmax;padding-bottom:30responh;color:#202020^
+                1025~1920|1920*1080$padding-left:116response;padding-top:201responh;font-size:103responmin;padding-bottom:57responh;color:#202020^
+                1921~9999|1920*1080$padding-left:116response;padding-top:201responh;font-size:103responmin;padding-bottom:57responmin;color:#202020">
+                Gallery
+                </h2>
+            </div>
+            
+            <div class="galleryList javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$padding-left:22response;padding-right:35response;display:block^
+            641~1024|1024*1100$padding-left:58response;padding-right:76response;display:flex;flex-flow:row wrap^
+            1025~1400|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap^
+            1401~1920|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap^
+            1921~9999|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap">
+           
+                <div class='galleryItem javascript_Css_define 'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <a href='Bowling.html'target='_blank'><div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="gallery/bowling.PNG"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div></a>
+                    <p class="javascript_Css_define "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    볼링페이지
+                    </p>
+                </div>
+                
+                <div class='galleryItem javascript_Css_define 'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <a href='domino.html'target='_blank'><div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="gallery/domino.PNG"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div></a>
+                    <p class="javascript_Css_define "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    도미노페이지
+                    </p>
+                </div>
+                <div class='galleryItem javascript_Css_define 'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <a href='dynamicBackgroundTest.html'target='_blank'><div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="gallery/dynamicBackground.PNG"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div></a>
+                    <p class="javascript_Css_define "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    DynamicBackground texture
+                    </p>
+                </div>
+                <div class='galleryItem javascript_Css_define 'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <a href='hdrTest.html'target='_blank'><div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="gallery/hdrTest.PNG"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div></a>
+                    <p class="javascript_Css_define "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    hdrTest
+                    </p>
+                </div>
+                <div class='galleryItem javascript_Css_define 'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <a href='treeMatrix.html'target='_blank'><div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="gallery/treeMatrix.PNG"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div></a>
+                    <p class="javascript_Css_define "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    treeMatrix
+                    </p>
+                </div>
+                <div class='galleryItem javascript_Css_define 'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <a href='https://sinjaesung.github.io/webPageTest/characterSelect.html'target='_blank'><div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <img src="img/creatorMe.png"class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%"/>
+                    </div></a>
+                    <p class="javascript_Css_define "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    SINJA 게임 체험 해보기
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section4 portfolioList javascript_Css_define  overflow_hidden"
+    >
+        <div class="contentWrap  javascript_Css_define"javascript_Css_define="
+        0~640|640*1100$padding-bottom:290responmax;opacity:0.96^
+        641~1024|1024*1100$padding-bottom:203responmax;opacity:0.96^
+        1025~1920|1920*1080$padding-bottom:310responmin;opacity:0.96^
+        1921~9999|1920*1080$padding-bottom:310responmin;opacity:0.96">
+            <div class="sectionMessage">
+                <h2 class="sectionTit javascript_Css_define fontfamily_Montserrat_Bold"javascript_Css_define="
+                0~640|640*1100$padding-left:22response;padding-top:26responh;font-size:35responmin;padding-bottom:30responh;color:#202020^
+                641~1024|1024*1100$padding-left:53response;padding-top:95responh;font-size:60responmax;padding-bottom:30responh;color:#202020^
+                1025~1920|1920*1080$padding-left:116response;padding-top:201responh;font-size:103responmin;padding-bottom:57responh;color:#202020^
+                1921~9999|1920*1080$padding-left:116response;padding-top:201responh;font-size:103responmin;padding-bottom:57responmin;color:#202020">
+                gamePlay Videos
+                </h2>
+            </div>
+            
+            <div class="mediaList javascript_Css_define"javascript_Css_define="
+            0~640|640*1100$padding-left:22response;padding-right:35response;display:block^
+            641~1024|1024*1100$padding-left:58response;padding-right:76response;display:flex;flex-flow:row wrap^
+            1025~1400|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap^
+            1401~1920|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap^
+            1921~9999|1920*1080$padding-left:40response;padding-right:40response;display:flex;flex-flow:row wrap"id='listContainer'>
+           
+                <div class=' videoItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <video class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%" controls>
+                            <source src="pinkyMoving.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    이동키or Shift키 조합 + 점프등으로 이동시 영상과같이 이동방향으로의 고속이동등 가능합니다.
+                    </p>
+                </div>
+                <div class=' videoItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <video class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%" controls>
+                            <source src="MovingWall.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    영상과 같이 건물or벽상에서 이동키,점프로 벽타듯이 위로 올라갈수있습니다.
+                    </p>
+                </div>
+                <div class=' videoItem javascript_Css_define'javascript_Css_define="
+                0~640|640*1100$padding-bottom:80responmin;width:100%^
+                641~1024|1024*1100$padding-bottom:72responmin;width:47%;margin-left:1%;margin-right:1%^
+                1025~1920|1920*1080$padding-bottom:94responmin;width:31%;margin-left:1%;margin-right:1%^
+                1921~9999|1920*1080$padding-bottom:94responmin;width:23%;margin-left:1%;margin-right:1%">
+                    <div class="videoFrame javascript_Css_define position_relative_normal "javascript_Css_define="
+                    0~640|640*1100$width:100%;height:552response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    641~1024|1024*1100$width:100%;height:400response;border-radius:20response;overflow:hidden;margin-bottom:9responh^
+                    1025~1920|1920*1080$width:100%;height:520response;border-radius:20responmin;overflow:hidden;margin-right:16response^
+                    1921~9999|1920*1080$width:100%;height:420response;border-radius:20responmin;overflow:hidden;margin-right:16response" >
+                        <video class='display_block javascript_Css_define'javascript_Css_define="
+                        0~9999|1920*1080$width:100%;height:100%" controls>
+                            <source src="withCharacterDance.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                    <p class="javascript_Css_define"javascript_Css_define="
+                    0~640|640*1100$width:100%;height:auto;font-size:12px;font-weight:600;text-shadow:0 0 10px #fff^
+                    641~1024|1024*1100$width:100%;height:auto;font-size:16px;font-weight:600;text-shadow:0 0 10px #fff^
+                    1025~1400|1400*1100$width:100%;height:auto;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1401~1920|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff^
+                    1921~9999|1920*1080$width:100%;height:auto;padding-top:22responmin;font-size:18responmin;font-weight:600;text-shadow:0 0 10px #fff">
+                    withCharacter 댄스영상
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="js/transformanimate$p.js"></script>
+<script src="js/common_function$p.js"></script>
+<script src="js/CssStyleDefine_layout$p.js"></script>
+<script src="js/inputkeyboard_validate.js"></script>
+<script src="js/styleEffectAnimate$p.js"></script>
+<script src="js/scrollTest$p.js"></script>
+<script src="js/scrollContainerVisual$p.js"></script>
+<script src="js/accordionGroup.js"></script>
+<script src="js/javascript_tabMenuAndToggles.js"></script>
+<script src="js/mouseTouchMoveControl$p.js"></script>
+<script src="js/screentouch_scrollprevent$p.js"></script>
+<!--<script src="swiperRelated.js"></script>-->
+<script>
+update_allHtmlElements_toOriginId(document.body);//domcontenteloaded이전 html요소가 BrowserhtmlParser에 의해 랜더링되기 이전에 요소들을 추상적으로 구조화는 되어있는 상태에서 이러한 요소들에 개별적 부모자식계층id고유id를 부여한다.
+</script>
+<script src="javascript_styleEffectTriggerControls$p.js"></script>
+<script>
+    const _0x17c233=_0x7298;function _0x7298(_0x46c66d,_0xe3edc2){const _0x25543c=_0x2554();return _0x7298=function(_0x7298d7,_0x3e88a3){_0x7298d7=_0x7298d7-0x123;let _0x8bdf09=_0x25543c[_0x7298d7];return _0x8bdf09;},_0x7298(_0x46c66d,_0xe3edc2);}(function(_0x27e2bd,_0x59d213){const _0x5d826d=_0x7298,_0x1f872b=_0x27e2bd();while(!![]){try{const _0x50109c=parseInt(_0x5d826d(0x126))/0x1+-parseInt(_0x5d826d(0x12c))/0x2+parseInt(_0x5d826d(0x12f))/0x3*(parseInt(_0x5d826d(0x128))/0x4)+-parseInt(_0x5d826d(0x130))/0x5*(parseInt(_0x5d826d(0x132))/0x6)+-parseInt(_0x5d826d(0x125))/0x7+parseInt(_0x5d826d(0x137))/0x8+-parseInt(_0x5d826d(0x135))/0x9*(-parseInt(_0x5d826d(0x131))/0xa);if(_0x50109c===_0x59d213)break;else _0x1f872b['push'](_0x1f872b['shift']());}catch(_0x35ebb4){_0x1f872b['push'](_0x1f872b['shift']());}}}(_0x2554,0x769bf));function _0x2554(){const _0x51e315=['1608639CgIszw','135xmhMCc','10mPViWt','115734cQieIv','offsetTop','scroll_response_group1_imgFrame','9505935iethwo','javascript_scroll_response_group1','3529488sbmeSD','log','css_responsive','스크롤반응\x20요소들html\x20offsetTop상태:','length','scrollresponse_data','scroll_response_group1_ptxtTarget','4890424NguMul','190782oORaOW','true','4jQTUbI','getElementsByClassName','100%','setAttribute','1038276WKbgcH','false','stringify'];_0x2554=function(){return _0x51e315;};return _0x2554();}let javascript_scroll_response_group1=document[_0x17c233(0x129)](_0x17c233(0x136));for(let e=0x0;e<javascript_scroll_response_group1[_0x17c233(0x13b)];e++){let item_target=javascript_scroll_response_group1[e];console[_0x17c233(0x138)](_0x17c233(0x13a),item_target,item_target[_0x17c233(0x133)]);let addpos_flag=0x0;if(e%0x3==0x0)addpos_flag=0x50;else{if(e%0x3==0x1)addpos_flag=0x14;else e%0x3==0x2&&(addpos_flag=0x28);}let scrollTargets_adaptdata={'0~1024':{'forward':{'style_datas':[{'target':_0x17c233(0x134)+e,'styleoption':{'animstyle':{'opacity':_0x17c233(0x12a),'left':'0'},'duration':0x578+0x14*e,'inlineresponsive_allow':_0x17c233(0x12d),'responsevalue_rate':0x0,'transformanimstyle':{'property':_0x17c233(0x139),'duration':0x4b0}}},{'target':_0x17c233(0x124)+e,'styleoption':{'animstyle':{'opacity':_0x17c233(0x12a),'left':'0'},'duration':0x578+0x14*e,'inlineresponsive_allow':_0x17c233(0x12d),'responsevalue_rate':0x0,'transformanimstyle':{'property':_0x17c233(0x139),'duration':0x4b0}}}]},'reset':{'style_datas':[{'target':_0x17c233(0x134)+e,'styleoption':{'animstyle':{'opacity':'0%','left':_0x17c233(0x139)},'duration':0x578+0x14*e,'inlineresponsive_allow':_0x17c233(0x127),'responsevalue_rate':0x1,'transformanimstyle':{'property':_0x17c233(0x139),'duration':0x4b0}}},{'target':_0x17c233(0x124)+e,'styleoption':{'animstyle':{'opacity':'0%','left':_0x17c233(0x139)},'duration':0x578+0x14*e,'inlineresponsive_allow':_0x17c233(0x127),'responsevalue_rate':0x1,'transformanimstyle':{'property':_0x17c233(0x139),'duration':0x4b0}}}]},'responsepos':0x96+addpos_flag},'1025~9999':{'forward':{'style_datas':[{'target':_0x17c233(0x134)+e,'styleoption':{'animstyle':{'opacity':_0x17c233(0x12a),'left':'0'},'duration':0x578+0x14*e,'inlineresponsive_allow':_0x17c233(0x12d),'responsevalue_rate':0x0,'transformanimstyle':{'property':_0x17c233(0x139),'duration':0x4b0}}},{'target':_0x17c233(0x124)+e,'styleoption':{'animstyle':{'opacity':_0x17c233(0x12a),'left':'0'},'duration':0x578+0x14*e,'inlineresponsive_allow':_0x17c233(0x12d),'responsevalue_rate':0x0,'transformanimstyle':{'property':_0x17c233(0x139),'duration':0x4b0}}}]},'reset':{'style_datas':[{'target':_0x17c233(0x134)+e,'styleoption':{'animstyle':{'opacity':'0%','left':_0x17c233(0x139)},'duration':0x578+0x14*e,'inlineresponsive_allow':_0x17c233(0x127),'responsevalue_rate':0x1,'transformanimstyle':{'property':_0x17c233(0x139),'duration':0x4b0}}},{'target':_0x17c233(0x124)+e,'styleoption':{'animstyle':{'opacity':'0%','left':_0x17c233(0x139)},'duration':0x578+0x14*e,'inlineresponsive_allow':_0x17c233(0x127),'responsevalue_rate':0x1,'transformanimstyle':{'property':_0x17c233(0x139),'duration':0x4b0}}}]},'responsepos':0xc8+addpos_flag}};item_target[_0x17c233(0x12b)](_0x17c233(0x123),JSON[_0x17c233(0x12e)](scrollTargets_adaptdata));}scroll_normal_response();
+</script>
+</body>
+</html>
